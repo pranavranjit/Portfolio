@@ -338,6 +338,10 @@ h1, h2, h3, h4, .logo {
     transition-delay: 0.2s;
 }
 
+.delay-2 {
+    transition-delay: 0.4s;
+}
+
 /* Scroll indicator */
 .scroll-indicator {
     position: absolute;

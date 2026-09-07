@@ -190,7 +190,7 @@ h1, h2, h3, h4, .logo {
 
 /* Projects Section */
 .section-title {
-    font-size: 3rem;
+    font-size: clamp(1.7rem, 6.5vw, 3rem);
     margin-bottom: 50px;
     text-align: center;
 }
@@ -270,6 +270,170 @@ h1, h2, h3, h4, .logo {
     border: 1px solid rgba(102, 252, 241, 0.2);
 }
 
+/* Career Log (Experience) */
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding-left: 45px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 11px;
+    top: 10px;
+    bottom: 10px;
+    width: 2px;
+    background: linear-gradient(180deg, var(--primary-color), var(--accent-color));
+    opacity: 0.5;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 45px;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: -40px;
+    top: 8px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--bg-color);
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 0 12px rgba(102, 252, 241, 0.6);
+}
+
+.timeline-content {
+    background: var(--surface-color);
+    border: 1px solid rgba(102, 252, 241, 0.1);
+    border-radius: 8px;
+    padding: 25px 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.timeline-content:hover {
+    transform: translateX(6px);
+    border-color: rgba(102, 252, 241, 0.4);
+    box-shadow: 0 12px 35px rgba(102, 252, 241, 0.15);
+}
+
+.timeline-date {
+    font-family: var(--font-heading);
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: var(--primary-color);
+    text-transform: uppercase;
+}
+
+.timeline-content h3 {
+    font-size: 1.4rem;
+    margin: 10px 0 4px;
+}
+
+.timeline-org {
+    color: var(--accent-color);
+    font-weight: 600;
+    margin-bottom: 18px;
+    text-shadow: 0 0 10px rgba(179, 0, 255, 0.4);
+}
+
+.timeline-list {
+    list-style: none;
+    margin-bottom: 25px;
+}
+
+.timeline-list li {
+    position: relative;
+    padding-left: 22px;
+    margin-bottom: 10px;
+}
+
+.timeline-list li::before {
+    content: '\25B8';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+}
+
+.timeline-content .tech-stack {
+    margin-bottom: 0;
+}
+
+/* Credentials (Education) */
+.edu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.edu-card {
+    background: rgba(31, 40, 51, 0.5);
+    border: 1px solid rgba(179, 0, 255, 0.2);
+    border-radius: 8px;
+    padding: 30px;
+    transition: all 0.3s ease;
+}
+
+.edu-card:hover {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 20px rgba(179, 0, 255, 0.25);
+    transform: translateY(-5px);
+}
+
+.edu-tag {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 4px;
+    padding: 4px 10px;
+    margin-bottom: 18px;
+}
+
+.edu-card h3 {
+    font-size: 1.25rem;
+    line-height: 1.4;
+    margin-bottom: 8px;
+}
+
+.edu-org {
+    color: var(--text-bright);
+    font-weight: 600;
+}
+
+.edu-meta {
+    font-size: 0.95rem;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+.edu-detail {
+    font-size: 0.95rem;
+}
+
+.edu-detail strong {
+    display: block;
+    margin-bottom: 6px;
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--primary-color);
+}
+
 /* Stats Section */
 .about-container {
     text-align: center;
@@ -316,6 +480,83 @@ h1, h2, h3, h4, .logo {
     font-size: 1.2rem;
 }
 
+/* Contact Section */
+.contact-intro {
+    max-width: 700px;
+    margin: -25px auto 45px;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+    width: 100%;
+    min-width: 0; /* let auto-fit wrap instead of sizing to min-content */
+    max-width: 1000px;
+    margin: 0 auto 45px;
+}
+
+.contact-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 30px 20px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--text-main);
+    overflow-wrap: anywhere;
+    background: rgba(31, 40, 51, 0.5);
+    border: 1px solid rgba(102, 252, 241, 0.15);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 20px rgba(102, 252, 241, 0.25);
+}
+
+.contact-icon {
+    display: flex;
+    color: var(--primary-color);
+    filter: drop-shadow(0 0 8px rgba(102, 252, 241, 0.5));
+}
+
+.contact-card h4 {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    color: var(--text-main);
+}
+
+.contact-value {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-bright);
+    transition: color 0.3s ease;
+}
+
+.contact-card:hover .contact-value {
+    color: var(--primary-color);
+}
+
+.contact-location {
+    text-align: center;
+    font-size: 1.05rem;
+}
+
+footer {
+    padding: 30px 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    background: rgba(11, 12, 16, 0.6);
+    border-top: 1px solid rgba(102, 252, 241, 0.15);
+}
+
 /* Animations & Scroll Effects */
 .fade-in {
     opacity: 0;
@@ -340,6 +581,10 @@ h1, h2, h3, h4, .logo {
 
 .delay-2 {
     transition-delay: 0.4s;
+}
+
+.delay-3 {
+    transition-delay: 0.6s;
 }
 
 /* Scroll indicator */
@@ -402,10 +647,43 @@ h1, h2, h3, h4, .logo {
     .stats-grid {
         grid-template-columns: 1fr;
     }
+    .edu-grid {
+        grid-template-columns: 1fr;
+    }
+    .timeline {
+        padding-left: 30px;
+    }
+    .timeline::before {
+        left: 4px;
+    }
+    .timeline-marker {
+        left: -33px;
+        width: 12px;
+        height: 12px;
+    }
+    .timeline-content {
+        padding: 22px;
+    }
     .navbar {
         padding: 20px;
     }
     .nav-links {
         display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .section {
+        padding: 90px 6vw;
+    }
+    .cyber-glitch-1 {
+        font-size: 1.4rem;
+    }
+    .main-title {
+        font-size: 2.4rem;
+    }
+    .project-info,
+    .edu-card {
+        padding: 25px;
     }
 }

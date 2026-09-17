@@ -3,29 +3,27 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Pranav | Developer Portfolio</title>
+        <title>Pranav | Data Scientist &amp; Quantitative Analyst</title>
         <meta
             name="description"
-            content="Portfolio showcasing Portfolio Optimization and Music AI Web Apps"
+            content="Portfolio of Pranav, a data scientist and quantitative analyst in Sydney, working on time-series forecasting, portfolio optimisation, and applied machine learning."
         />
         <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-        <meta name="theme-color" content="#0b0c10" />
+        <meta name="theme-color" content="#f6f7f9" />
         <link rel="stylesheet" href="styles.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;600;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
             rel="stylesheet"
         />
     </head>
 
     <body>
-        <div id="stars"></div>
-        <div id="stars2"></div>
-        <div id="stars3"></div>
+        <div class="grid-bg" aria-hidden="true"></div>
 
         <nav class="navbar">
-            <div class="logo">PRANAV<span class="highlight">_</span></div>
+            <a class="logo" href="#home">PRANAV<span class="logo-mark">.</span></a>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#experience">Experience</a></li>
@@ -34,33 +32,102 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <span class="nav-status">
+                <span class="status-dot" aria-hidden="true"></span>
+                Open to work
+            </span>
         </nav>
 
-        <section id="home" class="hero section">
-            <div class="hero-content fade-in">
-                <h2 class="cyber-glitch-1" data-text="LEVEL UP YOUR">
-                    LEVEL UP YOUR
-                </h2>
-                <h1 class="main-title cyber-glitch-2" data-text="PORTFOLIO">
-                    PORTFOLIO
-                </h1>
-                <p class="subtitle">AI & Quantitative Optimization Engineer</p>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary"
-                        >START GAME <i class="chevron"></i
-                    ></a>
+        <header id="home" class="hero section">
+            <div class="hero-copy fade-in">
+                <p class="eyebrow">Sydney, NSW</p>
+                <h1>Pranav</h1>
+                <p class="hero-role">Data Scientist &amp; Quantitative Analyst</p>
+                <p class="hero-lede">
+                    I build forecasting, optimisation and decision-support
+                    systems: production time-series models, portfolio
+                    optimisation tooling, and machine-learning applications that
+                    put analysis in front of the people making the call.
+                </p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary">
+                        View selected work
+                        <span class="arrow" aria-hidden="true">&rarr;</span>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">Get in touch</a>
                 </div>
+                <p class="hero-stack">
+                    <span>Python</span><span>SQL</span><span>scikit-learn</span
+                    ><span>Spark</span><span>Tableau</span><span>FastAPI</span>
+                </p>
             </div>
-            <div class="scroll-indicator">
-                <div class="mouse"></div>
-                <span>Scroll to continue</span>
-            </div>
-        </section>
+
+            <figure class="hero-figure fade-in delay-1">
+                <figcaption class="figure-head">
+                    <span class="figure-title">Fitted trend</span>
+                    <span class="figure-tag">illustrative</span>
+                </figcaption>
+                <svg class="plot" viewBox="0 0 440 288" role="img"
+                         aria-label="Illustrative scatter plot of observations with a fitted linear trend and error band.">
+                        <g class="plot-grid">
+                        <line x1="56" y1="34" x2="404" y2="34" />
+                        <line x1="56" y1="104.0" x2="404" y2="104.0" />
+                        <line x1="56" y1="174.0" x2="404" y2="174.0" />
+                        <line x1="56" y1="244" x2="404" y2="244" />
+                        </g>
+                        <g class="plot-axis">
+                            <line x1="56" y1="26" x2="56" y2="244" />
+                            <line x1="56" y1="244" x2="404" y2="244" />
+                        </g>
+                        <path class="plot-band" d="M 60 215.2 L 400 38.9 L 400 66.5 L 60 242.8 Z" />
+                        <path class="plot-fit" d="M 60 229.0 L 400 52.7" />
+                        <g class="plot-dots">
+                            <circle cx="64.0" cy="221.7" r="5.5" />
+                            <circle cx="77.3" cy="228.0" r="5.5" />
+                            <circle cx="90.6" cy="208.7" r="5.5" />
+                            <circle cx="103.8" cy="200.5" r="5.5" />
+                            <circle cx="117.1" cy="183.3" r="5.5" />
+                            <circle cx="130.4" cy="188.8" r="5.5" />
+                            <circle cx="143.7" cy="204.6" r="5.5" />
+                            <circle cx="157.0" cy="186.2" r="5.5" />
+                            <circle cx="170.2" cy="189.9" r="5.5" />
+                            <circle cx="183.5" cy="169.8" r="5.5" />
+                            <circle cx="196.8" cy="165.5" r="5.5" />
+                            <circle cx="210.1" cy="155.2" r="5.5" />
+                            <circle cx="223.4" cy="117.0" r="5.5" />
+                            <circle cx="236.6" cy="153.2" r="5.5" />
+                            <circle cx="249.9" cy="140.5" r="5.5" />
+                            <circle cx="263.2" cy="133.7" r="5.5" />
+                            <circle cx="276.5" cy="89.7" r="5.5" />
+                            <circle cx="289.8" cy="82.1" r="5.5" />
+                            <circle cx="303.0" cy="89.9" r="5.5" />
+                            <circle cx="316.3" cy="90.4" r="5.5" />
+                            <circle cx="329.6" cy="96.8" r="5.5" />
+                            <circle cx="342.9" cy="84.1" r="5.5" />
+                            <circle cx="356.2" cy="87.0" r="5.5" />
+                            <circle cx="369.4" cy="60.5" r="5.5" />
+                            <circle cx="382.7" cy="70.0" r="5.5" />
+                            <circle cx="396.0" cy="64.7" r="5.5" />
+                        </g>
+                        <text class="plot-axis-label" x="46" y="135.0"
+                              transform="rotate(-90 46 135.0)">signal</text>
+                        <text class="plot-axis-label" x="230.0" y="266">observations</text>
+                    </svg>
+                <p class="figure-note">
+                    Scatter with an ordinary-least-squares fit and &plusmn;1 SE band.
+                </p>
+            </figure>
+        </header>
 
         <section id="experience" class="section">
-            <h2 class="section-title fade-in">
-                CAREER <span class="highlight">LOG</span>
-            </h2>
+            <div class="section-head fade-in">
+                <span class="section-index">01</span>
+                <h2 class="section-title">Experience</h2>
+            </div>
+            <p class="section-sub fade-in">
+                Applied data science and analytics across telecommunications,
+                professional services and retail operations.
+            </p>
 
             <div class="timeline">
                 <!-- Reliance Jio -->
@@ -68,7 +135,7 @@
                     <div class="timeline-marker"></div>
                     <div class="timeline-content">
                         <span class="timeline-date"
-                            >Aug 2023 — Dec 2023 · Mumbai, India</span
+                            >Aug 2023 - Dec 2023 · Mumbai, India</span
                         >
                         <h3>Data Science Intern</h3>
                         <p class="timeline-org">Reliance Jio Platforms Ltd</p>
@@ -110,7 +177,7 @@
                     <div class="timeline-marker"></div>
                     <div class="timeline-content">
                         <span class="timeline-date"
-                            >May 2022 — Jul 2022 · Bengaluru, India</span
+                            >May 2022 - Jul 2022 · Bengaluru, India</span
                         >
                         <h3>Risk Advisory Intern</h3>
                         <p class="timeline-org">Deloitte</p>
@@ -145,7 +212,7 @@
                     <div class="timeline-marker"></div>
                     <div class="timeline-content">
                         <span class="timeline-date"
-                            >Aug 2025 — Aug 2026 · Sydney, NSW</span
+                            >Aug 2025 - Aug 2026 · Sydney, NSW</span
                         >
                         <h3>Night Fill Member (Part-Time)</h3>
                         <p class="timeline-org">Woolworths</p>
@@ -158,8 +225,8 @@
                             </li>
                         </ul>
                         <div class="tech-stack">
-                            <span>Inventory Control</span
-                            ><span>AutoStock</span><span>Stock Reconciliation</span>
+                            <span>Inventory Control</span><span>AutoStock</span
+                            ><span>Stock Reconciliation</span>
                         </div>
                     </div>
                 </div>
@@ -167,29 +234,31 @@
         </section>
 
         <section id="projects" class="section">
-            <h2 class="section-title fade-in">
-                FEATURED <span class="highlight">PROJECTS</span>
-            </h2>
+            <div class="section-head fade-in">
+                <span class="section-index">02</span>
+                <h2 class="section-title">Selected work</h2>
+            </div>
+            <p class="section-sub fade-in">
+                End-to-end builds covering data ingestion, modelling and interface.
+                Each one is deployed and publicly usable.
+            </p>
 
             <div class="project-grid">
                 <!-- Project 1 -->
-                <div class="project-card slide-up">
-                    <div
-                        class="project-image"
-                        style="
-                            background:
-                                linear-gradient(
-                                    135deg,
-                                    rgba(14, 14, 24, 0.9),
-                                    rgba(5, 5, 15, 0.9)
-                                ),
-                                url(&quot;https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=1000&auto=format&fit=crop&quot;)
-                                    center/cover;
-                        "
-                    >
-                        <div class="project-overlay">
-                            <span class="badge">AI/MUSIC</span>
-                        </div>
+                <article class="project-card slide-up">
+                    <div class="project-viz">
+                        <span class="badge">Audio ML</span>
+                        <svg class="thumb-plot" viewBox="0 0 303 177" preserveAspectRatio="xMidYMid meet" role="img"
+                             aria-label="Illustrative chromagram: energy across the 12 pitch classes over time, brighter cells marking the notes of each detected chord.">
+                            <defs><rect id="cell" width="14" height="12" rx="2" /></defs>
+                            <g fill="#e9f2fd"><use href="#cell" x="0" y="150"/><use href="#cell" x="0" y="90"/><use href="#cell" x="0" y="75"/><use href="#cell" x="0" y="45"/><use href="#cell" x="0" y="30"/><use href="#cell" x="0" y="0"/><use href="#cell" x="17" y="150"/><use href="#cell" x="17" y="90"/><use href="#cell" x="17" y="75"/><use href="#cell" x="17" y="45"/><use href="#cell" x="17" y="30"/><use href="#cell" x="17" y="0"/><use href="#cell" x="34" y="150"/><use href="#cell" x="34" y="90"/><use href="#cell" x="34" y="75"/><use href="#cell" x="34" y="45"/><use href="#cell" x="34" y="30"/><use href="#cell" x="34" y="0"/><use href="#cell" x="51" y="150"/><use href="#cell" x="51" y="135"/><use href="#cell" x="51" y="105"/><use href="#cell" x="51" y="75"/><use href="#cell" x="51" y="15"/><use href="#cell" x="51" y="0"/><use href="#cell" x="68" y="150"/><use href="#cell" x="68" y="135"/><use href="#cell" x="68" y="105"/><use href="#cell" x="68" y="75"/><use href="#cell" x="68" y="15"/><use href="#cell" x="68" y="0"/><use href="#cell" x="85" y="150"/><use href="#cell" x="85" y="105"/><use href="#cell" x="85" y="75"/><use href="#cell" x="85" y="15"/><use href="#cell" x="85" y="0"/><use href="#cell" x="102" y="135"/><use href="#cell" x="102" y="90"/><use href="#cell" x="102" y="75"/><use href="#cell" x="102" y="15"/><use href="#cell" x="119" y="135"/><use href="#cell" x="119" y="120"/><use href="#cell" x="119" y="75"/><use href="#cell" x="119" y="45"/><use href="#cell" x="119" y="15"/><use href="#cell" x="136" y="135"/><use href="#cell" x="136" y="90"/><use href="#cell" x="136" y="45"/><use href="#cell" x="136" y="15"/><use href="#cell" x="153" y="150"/><use href="#cell" x="153" y="120"/><use href="#cell" x="153" y="45"/><use href="#cell" x="153" y="15"/><use href="#cell" x="153" y="0"/><use href="#cell" x="170" y="150"/><use href="#cell" x="170" y="60"/><use href="#cell" x="170" y="45"/><use href="#cell" x="170" y="15"/><use href="#cell" x="170" y="0"/><use href="#cell" x="187" y="165"/><use href="#cell" x="187" y="150"/><use href="#cell" x="187" y="120"/><use href="#cell" x="187" y="60"/><use href="#cell" x="187" y="45"/><use href="#cell" x="187" y="15"/><use href="#cell" x="187" y="0"/><use href="#cell" x="204" y="165"/><use href="#cell" x="204" y="150"/><use href="#cell" x="204" y="75"/><use href="#cell" x="204" y="45"/><use href="#cell" x="221" y="165"/><use href="#cell" x="221" y="150"/><use href="#cell" x="221" y="120"/><use href="#cell" x="221" y="105"/><use href="#cell" x="221" y="75"/><use href="#cell" x="238" y="165"/><use href="#cell" x="238" y="150"/><use href="#cell" x="238" y="120"/><use href="#cell" x="238" y="105"/><use href="#cell" x="238" y="45"/><use href="#cell" x="255" y="150"/><use href="#cell" x="255" y="90"/><use href="#cell" x="255" y="45"/><use href="#cell" x="255" y="30"/><use href="#cell" x="255" y="0"/><use href="#cell" x="272" y="150"/><use href="#cell" x="272" y="90"/><use href="#cell" x="272" y="75"/><use href="#cell" x="272" y="45"/><use href="#cell" x="272" y="30"/><use href="#cell" x="272" y="15"/><use href="#cell" x="272" y="0"/><use href="#cell" x="289" y="150"/><use href="#cell" x="289" y="90"/><use href="#cell" x="289" y="45"/><use href="#cell" x="289" y="30"/></g>
+                            <g fill="#cde2fb"><use href="#cell" x="0" y="15"/><use href="#cell" x="17" y="135"/><use href="#cell" x="17" y="15"/><use href="#cell" x="34" y="15"/><use href="#cell" x="51" y="120"/><use href="#cell" x="51" y="60"/><use href="#cell" x="68" y="120"/><use href="#cell" x="68" y="60"/><use href="#cell" x="85" y="135"/><use href="#cell" x="85" y="120"/><use href="#cell" x="85" y="60"/><use href="#cell" x="102" y="120"/><use href="#cell" x="102" y="45"/><use href="#cell" x="119" y="90"/><use href="#cell" x="119" y="60"/><use href="#cell" x="119" y="0"/><use href="#cell" x="136" y="120"/><use href="#cell" x="136" y="75"/><use href="#cell" x="136" y="60"/><use href="#cell" x="136" y="0"/><use href="#cell" x="153" y="105"/><use href="#cell" x="153" y="60"/><use href="#cell" x="170" y="120"/><use href="#cell" x="170" y="105"/><use href="#cell" x="187" y="105"/><use href="#cell" x="204" y="120"/><use href="#cell" x="204" y="105"/><use href="#cell" x="204" y="90"/><use href="#cell" x="204" y="30"/><use href="#cell" x="221" y="90"/><use href="#cell" x="221" y="45"/><use href="#cell" x="221" y="30"/><use href="#cell" x="238" y="75"/><use href="#cell" x="255" y="135"/><use href="#cell" x="255" y="75"/><use href="#cell" x="255" y="15"/><use href="#cell" x="289" y="135"/><use href="#cell" x="289" y="75"/><use href="#cell" x="289" y="15"/><use href="#cell" x="289" y="0"/></g>
+                            <g fill="#9ec5f4"><use href="#cell" x="0" y="135"/><use href="#cell" x="34" y="135"/><use href="#cell" x="102" y="60"/><use href="#cell" x="102" y="0"/><use href="#cell" x="153" y="165"/><use href="#cell" x="170" y="165"/><use href="#cell" x="238" y="90"/><use href="#cell" x="238" y="30"/><use href="#cell" x="272" y="135"/></g>
+                            <g fill="#6da7ec"><use href="#cell" x="34" y="105"/><use href="#cell" x="153" y="90"/><use href="#cell" x="221" y="0"/></g>
+                            <g fill="#3987e5"><use href="#cell" x="0" y="120"/><use href="#cell" x="0" y="105"/><use href="#cell" x="17" y="120"/><use href="#cell" x="17" y="60"/><use href="#cell" x="34" y="120"/><use href="#cell" x="51" y="45"/><use href="#cell" x="51" y="30"/><use href="#cell" x="68" y="30"/><use href="#cell" x="85" y="45"/><use href="#cell" x="85" y="30"/><use href="#cell" x="102" y="165"/><use href="#cell" x="119" y="165"/><use href="#cell" x="136" y="150"/><use href="#cell" x="153" y="75"/><use href="#cell" x="170" y="75"/><use href="#cell" x="187" y="90"/><use href="#cell" x="187" y="75"/><use href="#cell" x="204" y="135"/><use href="#cell" x="204" y="0"/><use href="#cell" x="221" y="15"/><use href="#cell" x="238" y="15"/><use href="#cell" x="238" y="0"/><use href="#cell" x="255" y="120"/><use href="#cell" x="272" y="120"/><use href="#cell" x="289" y="105"/></g>
+                            <g fill="#2a78d6"><use href="#cell" x="0" y="60"/><use href="#cell" x="17" y="105"/><use href="#cell" x="34" y="60"/><use href="#cell" x="68" y="45"/><use href="#cell" x="85" y="165"/><use href="#cell" x="102" y="150"/><use href="#cell" x="102" y="105"/><use href="#cell" x="119" y="150"/><use href="#cell" x="136" y="165"/><use href="#cell" x="136" y="105"/><use href="#cell" x="153" y="30"/><use href="#cell" x="170" y="90"/><use href="#cell" x="187" y="30"/><use href="#cell" x="204" y="15"/><use href="#cell" x="238" y="135"/><use href="#cell" x="255" y="105"/><use href="#cell" x="255" y="60"/><use href="#cell" x="272" y="165"/><use href="#cell" x="272" y="105"/><use href="#cell" x="272" y="60"/><use href="#cell" x="289" y="120"/><use href="#cell" x="289" y="60"/></g>
+                            <g fill="#1c5cab"><use href="#cell" x="0" y="165"/><use href="#cell" x="17" y="165"/><use href="#cell" x="34" y="165"/><use href="#cell" x="51" y="165"/><use href="#cell" x="51" y="90"/><use href="#cell" x="68" y="165"/><use href="#cell" x="68" y="90"/><use href="#cell" x="85" y="90"/><use href="#cell" x="102" y="30"/><use href="#cell" x="119" y="105"/><use href="#cell" x="119" y="30"/><use href="#cell" x="136" y="30"/><use href="#cell" x="153" y="135"/><use href="#cell" x="170" y="135"/><use href="#cell" x="170" y="30"/><use href="#cell" x="187" y="135"/><use href="#cell" x="204" y="60"/><use href="#cell" x="221" y="135"/><use href="#cell" x="221" y="60"/><use href="#cell" x="238" y="60"/><use href="#cell" x="255" y="165"/><use href="#cell" x="289" y="165"/></g>
+                        </svg>
                     </div>
                     <div class="project-info">
                         <h3>LiveChord</h3>
@@ -208,33 +277,104 @@
                             href="https://sunny2802-live-chord-ai.hf.space"
                             target="_blank"
                             rel="noopener"
-                            class="btn btn-outline"
-                            >PLAY DEMO</a
+                            class="btn btn-link"
+                            >Open live demo
+                            <span class="arrow" aria-hidden="true">&rarr;</span></a
                         >
                     </div>
-                </div>
+                </article>
 
                 <!-- Project 2 -->
-                <div class="project-card slide-up delay-1">
-                    <div
-                        class="project-image"
-                        style="
-                            background:
-                                linear-gradient(
-                                    135deg,
-                                    rgba(14, 14, 24, 0.9),
-                                    rgba(5, 5, 15, 0.9)
-                                ),
-                                url(&quot;https://images.unsplash.com/photo-1642790106117-e829e14a795f?q=80&w=1000&auto=format&fit=crop&quot;)
-                                    center/cover;
-                        "
-                    >
-                        <div class="project-overlay">
-                            <span class="badge">CRYPTO/ML</span>
-                        </div>
+                <article class="project-card slide-up">
+                    <div class="project-viz">
+                        <span class="badge">Quant / ML</span>
+                        <svg class="thumb-plot" viewBox="0 0 340 220" preserveAspectRatio="xMidYMid meet" role="img"
+     aria-label="Illustrative risk-return scatter of candidate portfolios with an efficient frontier curve and the optimal point marked.">
+  <g class="tp-grid">
+    <line x1="34" y1="32" x2="322" y2="32" /><line x1="34" y1="103.0" x2="322" y2="103.0" /><line x1="34" y1="174" x2="322" y2="174" />
+  </g>
+  <g class="tp-axis"><line x1="34" y1="18" x2="34" y2="188" /><line x1="34" y1="188" x2="322" y2="188" /></g>
+  <g class="tp-cloud">
+        <circle cx="261.3" cy="81.2" r="3" />
+    <circle cx="197.2" cy="111.9" r="3" />
+    <circle cx="73.1" cy="139.3" r="3" />
+    <circle cx="68.7" cy="155.4" r="3" />
+    <circle cx="213.7" cy="104.1" r="3" />
+    <circle cx="67.2" cy="156.9" r="3" />
+    <circle cx="167.1" cy="130.5" r="3" />
+    <circle cx="119.1" cy="119.9" r="3" />
+    <circle cx="185.9" cy="86.2" r="3" />
+    <circle cx="63.0" cy="147.0" r="3" />
+    <circle cx="130.5" cy="99.2" r="3" />
+    <circle cx="179.0" cy="96.7" r="3" />
+    <circle cx="139.5" cy="94.2" r="3" />
+    <circle cx="239.1" cy="62.5" r="3" />
+    <circle cx="98.9" cy="123.5" r="3" />
+    <circle cx="261.3" cy="56.2" r="3" />
+    <circle cx="177.7" cy="99.5" r="3" />
+    <circle cx="227.4" cy="78.5" r="3" />
+    <circle cx="138.4" cy="103.1" r="3" />
+    <circle cx="154.4" cy="118.1" r="3" />
+    <circle cx="64.0" cy="170.5" r="3" />
+    <circle cx="115.9" cy="120.6" r="3" />
+    <circle cx="71.8" cy="154.0" r="3" />
+    <circle cx="122.7" cy="125.6" r="3" />
+    <circle cx="125.6" cy="113.5" r="3" />
+    <circle cx="117.9" cy="124.0" r="3" />
+    <circle cx="300.9" cy="43.0" r="3" />
+    <circle cx="129.9" cy="155.5" r="3" />
+    <circle cx="50.3" cy="178.1" r="3" />
+    <circle cx="101.9" cy="116.5" r="3" />
+    <circle cx="51.3" cy="169.9" r="3" />
+    <circle cx="60.8" cy="152.7" r="3" />
+    <circle cx="128.5" cy="122.3" r="3" />
+    <circle cx="243.6" cy="71.1" r="3" />
+    <circle cx="234.7" cy="75.0" r="3" />
+    <circle cx="304.1" cy="52.7" r="3" />
+    <circle cx="236.8" cy="99.5" r="3" />
+    <circle cx="280.1" cy="58.0" r="3" />
+    <circle cx="239.3" cy="75.7" r="3" />
+    <circle cx="180.1" cy="98.7" r="3" />
+    <circle cx="257.6" cy="93.3" r="3" />
+    <circle cx="226.2" cy="86.0" r="3" />
+    <circle cx="109.3" cy="122.3" r="3" />
+    <circle cx="77.1" cy="143.1" r="3" />
+    <circle cx="194.1" cy="96.5" r="3" />
+    <circle cx="176.2" cy="103.3" r="3" />
+    <circle cx="255.8" cy="80.8" r="3" />
+    <circle cx="220.1" cy="65.1" r="3" />
+    <circle cx="240.1" cy="73.7" r="3" />
+    <circle cx="238.2" cy="66.7" r="3" />
+    <circle cx="240.9" cy="79.7" r="3" />
+    <circle cx="173.6" cy="81.4" r="3" />
+    <circle cx="247.9" cy="61.5" r="3" />
+    <circle cx="88.0" cy="127.3" r="3" />
+    <circle cx="241.8" cy="61.0" r="3" />
+    <circle cx="65.7" cy="137.9" r="3" />
+    <circle cx="223.4" cy="71.7" r="3" />
+    <circle cx="183.3" cy="93.3" r="3" />
+    <circle cx="170.3" cy="93.3" r="3" />
+    <circle cx="302.4" cy="49.7" r="3" />
+    <circle cx="54.5" cy="171.8" r="3" />
+    <circle cx="166.0" cy="135.7" r="3" />
+    <circle cx="104.1" cy="118.2" r="3" />
+    <circle cx="86.6" cy="149.4" r="3" />
+    <circle cx="295.8" cy="53.6" r="3" />
+    <circle cx="278.8" cy="70.8" r="3" />
+    <circle cx="109.7" cy="113.1" r="3" />
+    <circle cx="50.9" cy="152.0" r="3" />
+    <circle cx="166.3" cy="96.1" r="3" />
+    <circle cx="131.5" cy="113.3" r="3" />
+  </g>
+  <path class="tp-line" d="M 42.0 161.8 L 48.9 148.4 L 55.7 139.9 L 62.5 133.1 L 69.4 127.4 L 76.2 122.2 L 83.1 117.5 L 89.9 113.2 L 96.8 109.2 L 103.7 105.4 L 110.5 101.8 L 117.4 98.3 L 124.2 95.1 L 131.1 91.9 L 137.9 88.9 L 144.8 85.9 L 151.6 83.1 L 158.4 80.4 L 165.3 77.7 L 172.2 75.1 L 179.0 72.6 L 185.8 70.1 L 192.7 67.7 L 199.5 65.3 L 206.4 63.0 L 213.2 60.8 L 220.1 58.5 L 227.0 56.4 L 233.8 54.2 L 240.7 52.1 L 247.5 50.1 L 254.3 48.0 L 261.2 46.0 L 268.0 44.1 L 274.9 42.1 L 281.8 40.2 L 288.6 38.4 L 295.5 36.5 L 302.3 34.7 L 309.1 32.9 L 316.0 31.1" />
+  <circle class="tp-marker" cx="211.9" cy="61.2" r="6.5" />
+  <text class="tp-label" x="227.9" y="65.2">max Sharpe</text>
+  <text class="tp-axis-label" x="178.0" y="206">risk</text>
+  <text class="tp-axis-label" x="26" y="103.0" transform="rotate(-90 26 103.0)">return</text>
+</svg>
                     </div>
                     <div class="project-info">
-                        <h3>Stock Portfolio & Momentum Tracker</h3>
+                        <h3>Stock Portfolio &amp; Momentum Tracker</h3>
                         <p>
                             A full-stack Streamlit application featuring Sharpe
                             ratio portfolio optimization, momentum-based stock
@@ -251,38 +391,52 @@
                             href="https://crypto-tracker-and-portfolio-management-aiamouaxdduqc7grbhclme.streamlit.app/"
                             target="_blank"
                             rel="noopener"
-                            class="btn btn-outline"
-                            >VIEW STATS</a
+                            class="btn btn-link"
+                            >Open live app
+                            <span class="arrow" aria-hidden="true">&rarr;</span></a
                         >
                     </div>
-                </div>
+                </article>
 
                 <!-- Project 3 -->
-                <div class="project-card slide-up delay-2">
-                    <div
-                        class="project-image"
-                        style="
-                            background:
-                                linear-gradient(
-                                    135deg,
-                                    rgba(240, 196, 90, 0.85),
-                                    rgba(60, 140, 90, 0.85),
-                                    rgba(5, 5, 15, 0.95)
-                                );
-                        "
-                    >
-                        <div class="project-overlay">
-                            <span class="badge">GAME / WASM</span>
-                        </div>
+                <article class="project-card slide-up">
+                    <div class="project-viz">
+                        <span class="badge">Simulation / WASM</span>
+                        <svg class="thumb-plot" viewBox="0 0 340 220" preserveAspectRatio="xMidYMid meet" role="img"
+     aria-label="Illustrative bar chart of a balance compounding upward over successive in-game turns.">
+  <g class="tp-grid">
+    <line x1="34" y1="32" x2="322" y2="32" /><line x1="34" y1="103.0" x2="322" y2="103.0" />
+  </g>
+  <g class="tp-axis"><line x1="34" y1="18" x2="34" y2="188" /><line x1="34" y1="188" x2="322" y2="188" /></g>
+  <g class="tp-bars">
+        <rect x="44.0" y="131.0" width="14.4" height="57.0" rx="4" opacity="0.32" />
+    <rect x="63.4" y="126.8" width="14.4" height="61.2" rx="4" opacity="0.37" />
+    <rect x="82.9" y="122.2" width="14.4" height="65.8" rx="4" opacity="0.42" />
+    <rect x="102.3" y="117.2" width="14.4" height="70.8" rx="4" opacity="0.48" />
+    <rect x="121.7" y="111.7" width="14.4" height="76.3" rx="4" opacity="0.53" />
+    <rect x="141.1" y="105.7" width="14.4" height="82.3" rx="4" opacity="0.58" />
+    <rect x="160.6" y="99.2" width="14.4" height="88.8" rx="4" opacity="0.63" />
+    <rect x="180.0" y="92.1" width="14.4" height="95.9" rx="4" opacity="0.69" />
+    <rect x="199.4" y="84.4" width="14.4" height="103.6" rx="4" opacity="0.74" />
+    <rect x="218.9" y="76.0" width="14.4" height="112.0" rx="4" opacity="0.79" />
+    <rect x="238.3" y="66.8" width="14.4" height="121.2" rx="4" opacity="0.84" />
+    <rect x="257.7" y="56.8" width="14.4" height="131.2" rx="4" opacity="0.90" />
+    <rect x="277.1" y="45.9" width="14.4" height="142.1" rx="4" opacity="0.95" />
+    <rect x="296.6" y="34.0" width="14.4" height="154.0" rx="4" opacity="1.00" />
+  </g>
+  <text class="tp-axis-label" x="178.0" y="206">turns</text>
+  <text class="tp-axis-label" x="26" y="103.0" transform="rotate(-90 26 103.0)">balance</text>
+</svg>
                     </div>
                     <div class="project-info">
-                        <h3>CoinQuest — Prosperity Point</h3>
+                        <h3>CoinQuest: Prosperity Point</h3>
                         <p>
-                            A top-down finance RPG where the mechanics <em>are</em>
-                            the lessons: fight monsters for coins, then bank,
-                            budget, borrow, and invest to outrun inflation. Built
-                            in Python + Pygame with a from-scratch TF-IDF RAG
-                            advisor, compiled to WebAssembly to play in-browser.
+                            A top-down finance simulation where the mechanics
+                            <em>are</em> the lessons: earn coins, then bank,
+                            budget, borrow, and invest to outrun inflation.
+                            Built in Python + Pygame with a from-scratch TF-IDF
+                            RAG advisor, compiled to WebAssembly to run
+                            in-browser.
                         </p>
                         <div class="tech-stack">
                             <span>Python</span><span>Pygame</span
@@ -292,27 +446,31 @@
                             href="https://pranavranjit.github.io/coinquest/"
                             target="_blank"
                             rel="noopener"
-                            class="btn btn-outline"
-                            >PLAY GAME</a
+                            class="btn btn-link"
+                            >Run in browser
+                            <span class="arrow" aria-hidden="true">&rarr;</span></a
                         >
                     </div>
-                </div>
+                </article>
             </div>
         </section>
 
         <section id="education" class="section">
-            <h2 class="section-title fade-in">
-                CREDENTIALS <span class="highlight">UNLOCKED</span>
-            </h2>
+            <div class="section-head fade-in">
+                <span class="section-index">03</span>
+                <h2 class="section-title">Education &amp; credentials</h2>
+            </div>
+            <p class="section-sub fade-in">
+                Quantitative training across data science, economics and
+                statistics.
+            </p>
 
             <div class="edu-grid">
                 <div class="edu-card slide-up">
-                    <span class="edu-tag">MASTERS</span>
+                    <span class="edu-tag">Masters</span>
                     <h3>Master of Data Science and Decisions</h3>
-                    <p class="edu-org">
-                        University of New South Wales, Sydney
-                    </p>
-                    <p class="edu-meta">Feb 2024 — Dec 2025</p>
+                    <p class="edu-org">University of New South Wales, Sydney</p>
+                    <p class="edu-meta">Feb 2024 - Dec 2025</p>
                     <p class="edu-detail">
                         <strong>Coursework</strong>
                         Financial Economics · Game Theory · Business Economics ·
@@ -322,15 +480,13 @@
                 </div>
 
                 <div class="edu-card slide-up delay-1">
-                    <span class="edu-tag">BACHELORS</span>
-                    <h3>
-                        BSc — Economics, Mathematics &amp; Statistics
-                    </h3>
+                    <span class="edu-tag">Bachelors</span>
+                    <h3>BSc in Economics, Mathematics &amp; Statistics</h3>
                     <p class="edu-org">
                         CHRIST (Deemed to Be University), Bangalore
                     </p>
                     <p class="edu-meta">
-                        Apr 2020 — Mar 2023 · First Class with Distinction
+                        Apr 2020 - Mar 2023 · First Class with Distinction
                     </p>
                     <p class="edu-detail">
                         <strong>Coursework</strong>
@@ -341,8 +497,8 @@
                 </div>
 
                 <div class="edu-card slide-up delay-2">
-                    <span class="edu-tag">ACHIEVEMENTS</span>
-                    <h3>Awards &amp; Leadership</h3>
+                    <span class="edu-tag">Awards &amp; leadership</span>
+                    <h3>Recognition</h3>
                     <p class="edu-detail">
                         First place, Science Exhibition (Dept. of Mathematics).
                         Founded the Code Snaps wing of the Statistics and Data
@@ -351,52 +507,76 @@
                 </div>
 
                 <div class="edu-card slide-up delay-3">
-                    <span class="edu-tag">STATUS</span>
+                    <span class="edu-tag">Availability</span>
                     <h3>Sydney, NSW</h3>
                     <p class="edu-detail">
-                        Holding a Graduate Visa (485) with full working rights —
-                        open to Financial Analyst and data-driven finance roles,
-                        and available for relocation.
+                        Holding a Graduate Visa (485) with full working rights. Open to
+                        Financial Analyst and data-driven finance roles, and
+                        available for relocation.
                     </p>
                 </div>
             </div>
         </section>
 
         <section id="about" class="section">
-            <div class="about-container fade-in">
-                <h2 class="section-title">
-                    PLAYER <span class="highlight">STATS</span>
-                </h2>
-                <div class="stats-grid">
-                    <div class="stat-box box-glow">
-                        <h4>DEV RANK</h4>
-                        <p class="stat-value">GRANDMASTER</p>
-                    </div>
-                    <div class="stat-box box-glow">
-                        <h4>SPECIALTY</h4>
-                        <p class="stat-value">AI / QUANT</p>
-                    </div>
-                    <div class="stat-box box-glow">
-                        <h4>EXP</h4>
-                        <p class="stat-value">OVER 9000</p>
-                    </div>
+            <div class="section-head fade-in">
+                <span class="section-index">04</span>
+                <h2 class="section-title">About</h2>
+            </div>
+            <p class="section-sub fade-in">
+                Selected outcomes from the roles above.
+            </p>
+
+            <div class="stats-grid">
+                <div class="stat-box slide-up">
+                    <p class="stat-value">30%</p>
+                    <h4>Faster forecasting</h4>
+                    <p class="stat-note">
+                        runtime cut on production time-series models
+                    </p>
                 </div>
+                <div class="stat-box slide-up delay-1">
+                    <p class="stat-value">4+ hrs</p>
+                    <h4>Reclaimed weekly</h4>
+                    <p class="stat-note">
+                        manual reporting automated at Deloitte
+                    </p>
+                </div>
+                <div class="stat-box slide-up delay-2">
+                    <p class="stat-value">3</p>
+                    <h4>Live applications</h4>
+                    <p class="stat-note">
+                        built end-to-end and publicly deployed
+                    </p>
+                </div>
+            </div>
+
+            <div class="fade-in">
                 <p class="about-text">
-                    I build intelligent web applications that solve complex
-                    problems. From quantitative finance platforms to real-time
-                    contextual model building , I bring logic, aesthetics, and
-                    high performance together.
+                    I work where statistics, finance and software meet. A Master
+                    of Data Science and Decisions at UNSW on top of a BSc in
+                    Economics, Mathematics and Statistics means I am as
+                    comfortable specifying a model as I am shipping the
+                    application that serves it.
+                </p>
+                <p class="about-text">
+                    In practice that has meant time-series forecasting and
+                    customer-value analysis at Reliance Jio, financial
+                    reconciliation and data governance at Deloitte, and a set of
+                    projects where I own the whole stack: ingestion, modelling
+                    and the interface people actually use.
                 </p>
             </div>
         </section>
 
         <section id="contact" class="section">
-            <h2 class="section-title fade-in">
-                ESTABLISH <span class="highlight">COMMS</span>
-            </h2>
-            <p class="contact-intro fade-in">
+            <div class="section-head fade-in">
+                <span class="section-index">05</span>
+                <h2 class="section-title">Contact</h2>
+            </div>
+            <p class="section-sub fade-in">
                 Open to Financial Analyst and data-driven finance roles in
-                Sydney. Pick a channel — I reply on all of them.
+                Sydney. Pick a channel; I reply on all of them.
             </p>
 
             <div class="contact-grid">
@@ -406,8 +586,8 @@
                 >
                     <span class="contact-icon">
                         <svg
-                            width="26"
-                            height="26"
+                            width="20"
+                            height="20"
                             viewBox="0 0 24 24"
                             fill="none"
                             stroke="currentColor"
@@ -420,15 +600,17 @@
                             <path d="m2 7 10 6 10-6" />
                         </svg>
                     </span>
-                    <h4>EMAIL</h4>
-                    <p class="contact-value">pranav2ranjit@gmail.com</p>
+                    <span>
+                        <h4>Email</h4>
+                        <span class="contact-value">pranav2ranjit@gmail.com</span>
+                    </span>
                 </a>
 
                 <a class="contact-card slide-up delay-1" href="tel:+61493949697">
                     <span class="contact-icon">
                         <svg
-                            width="26"
-                            height="26"
+                            width="20"
+                            height="20"
                             viewBox="0 0 24 24"
                             fill="none"
                             stroke="currentColor"
@@ -442,8 +624,10 @@
                             />
                         </svg>
                     </span>
-                    <h4>PHONE</h4>
-                    <p class="contact-value">+61 493 949 697</p>
+                    <span>
+                        <h4>Phone</h4>
+                        <span class="contact-value">+61 493 949 697</span>
+                    </span>
                 </a>
 
                 <a
@@ -454,8 +638,8 @@
                 >
                     <span class="contact-icon">
                         <svg
-                            width="26"
-                            height="26"
+                            width="20"
+                            height="20"
                             viewBox="0 0 24 24"
                             fill="none"
                             stroke="currentColor"
@@ -471,8 +655,10 @@
                             <circle cx="4" cy="4" r="2" />
                         </svg>
                     </span>
-                    <h4>LINKEDIN</h4>
-                    <p class="contact-value">in/pranav2ranjit</p>
+                    <span>
+                        <h4>LinkedIn</h4>
+                        <span class="contact-value">in/pranav2ranjit</span>
+                    </span>
                 </a>
 
                 <a
@@ -483,8 +669,8 @@
                 >
                     <span class="contact-icon">
                         <svg
-                            width="26"
-                            height="26"
+                            width="20"
+                            height="20"
                             viewBox="0 0 24 24"
                             fill="none"
                             stroke="currentColor"
@@ -498,20 +684,22 @@
                             />
                         </svg>
                     </span>
-                    <h4>GITHUB</h4>
-                    <p class="contact-value">pranavranjit</p>
+                    <span>
+                        <h4>GitHub</h4>
+                        <span class="contact-value">pranavranjit</span>
+                    </span>
                 </a>
             </div>
 
             <p class="contact-location fade-in">
-                Based in <span class="highlight">Sydney, NSW</span> — open to
-                on-site, hybrid, and remote roles, and
-                <span class="highlight">available for relocation</span>.
+                Based in <strong>Sydney, NSW</strong>. Open to on-site, hybrid and
+                remote roles, and <strong>available for relocation</strong>.
             </p>
         </section>
 
         <footer>
-            <p>&copy; 2026 PRANAV. All systems operational.</p>
+            <span>&copy; 2026 Pranav</span>
+            <span>Built with vanilla HTML, CSS &amp; JavaScript</span>
         </footer>
 
         <script src="script.js"></script>

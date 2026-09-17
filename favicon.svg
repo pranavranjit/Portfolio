@@ -1,29 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Spaceship">
-    <defs>
-        <linearGradient id="hull" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#ffffff" />
-            <stop offset="45%" stop-color="#66fcf1" />
-            <stop offset="100%" stop-color="#45a29e" />
-        </linearGradient>
-        <linearGradient id="thrust" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#b300ff" />
-            <stop offset="100%" stop-color="#b300ff" stop-opacity="0" />
-        </linearGradient>
-    </defs>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Rising trend line chart">
+    <rect width="64" height="64" rx="14" fill="#0f1e33" />
 
-    <rect width="64" height="64" rx="14" fill="#0b0c10" />
+    <!-- Axes -->
+    <path d="M14 13v38h38" fill="none" stroke="#45536b" stroke-width="3" stroke-linecap="round" />
 
-    <!-- Thruster plume -->
-    <path d="M25 40h14l-7 17z" fill="url(#thrust)" />
+    <!-- Trend line -->
+    <path
+        d="M19 43 30 33 38 37 50 20"
+        fill="none"
+        stroke="#3987e5"
+        stroke-width="6"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+    />
 
-    <!-- Fins -->
-    <path d="M21 29 10 45l11-4z" fill="#b300ff" />
-    <path d="M43 29l11 16-11-4z" fill="#b300ff" />
-
-    <!-- Hull -->
-    <path d="M32 5c7.5 8.5 11 18.5 11 29v7H21v-7C21 23.5 24.5 13.5 32 5z" fill="url(#hull)" />
-
-    <!-- Cockpit -->
-    <circle cx="32" cy="24" r="6" fill="#0b0c10" />
-    <circle cx="32" cy="24" r="6" fill="none" stroke="#b300ff" stroke-width="2" />
+    <!-- Leading observation -->
+    <circle cx="50" cy="20" r="6" fill="#ffffff" />
 </svg>

@@ -1,78 +1,88 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Scroll Animation using Intersection Observer
-    const animatedElements = document.querySelectorAll('.fade-in, .slide-up');
-    
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.2
-    };
+    const reduceMotion = window.matchMedia(
+        '(prefers-reduced-motion: reduce)'
+    ).matches;
 
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('in-view');
-                observer.unobserve(entry.target); // Only animate once
-            }
-        });
-    }, observerOptions);
+    /* ---------------------------------------------------------------
+       Reveal sections on scroll
+       --------------------------------------------------------------- */
+    const animated = document.querySelectorAll('.fade-in, .slide-up');
 
-    animatedElements.forEach(el => {
-        observer.observe(el);
-    });
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+        animated.forEach((el) => el.classList.add('in-view'));
+    } else {
+        const revealObserver = new IntersectionObserver(
+            (entries, observer) => {
+                entries.forEach((entry) => {
+                    if (!entry.isIntersecting) return;
+                    entry.target.classList.add('in-view');
+                    observer.unobserve(entry.target); // reveal once
+                });
+            },
+            { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+        );
 
-    // Particle Star Background (Simple Implementation)
-    function createStars(elementId, count, size) {
-        const starContainer = document.getElementById(elementId);
-        if(!starContainer) return;
-        
-        let boxShadow = '';
-        for(let i = 0; i < count; i++) {
-            const x = Math.floor(Math.random() * 2000);
-            const y = Math.floor(Math.random() * 2000);
-            boxShadow += `${x}px ${y}px #FFF, `;
-        }
-        
-        // Remove trailing comma and space
-        boxShadow = boxShadow.slice(0, -2);
-        
-        const style = document.createElement('style');
-        style.innerHTML = `
-            #${elementId} {
-                width: ${size}px;
-                height: ${size}px;
-                background: transparent;
-                box-shadow: ${boxShadow};
-                animation: animStar ${size === 1 ? '50s' : size === 2 ? '100s' : '150s'} linear infinite;
-            }
-            #${elementId}:after {
-                content: " ";
-                position: absolute;
-                top: 2000px;
-                width: ${size}px;
-                height: ${size}px;
-                background: transparent;
-                box-shadow: ${boxShadow};
-            }
-            @keyframes animStar {
-                from { transform: translateY(0px) }
-                to { transform: translateY(-2000px) }
-            }
-        `;
-        document.head.appendChild(style);
+        animated.forEach((el) => revealObserver.observe(el));
     }
 
-    createStars('stars', 700, 1);
-    createStars('stars2', 200, 2);
-    createStars('stars3', 100, 3);
+    /* ---------------------------------------------------------------
+       Navbar gets a hairline + shadow once the page has scrolled
+       --------------------------------------------------------------- */
+    const navbar = document.querySelector('.navbar');
 
-    // Smooth scroll for nav links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
+    if (navbar) {
+        const syncNavbar = () => {
+            navbar.classList.toggle('is-stuck', window.scrollY > 8);
+        };
+
+        syncNavbar();
+        window.addEventListener('scroll', syncNavbar, { passive: true });
+    }
+
+    /* ---------------------------------------------------------------
+       Highlight the nav link for the section currently in view
+       --------------------------------------------------------------- */
+    const navLinks = Array.from(document.querySelectorAll('.nav-links a'));
+    const sections = navLinks
+        .map((link) => document.querySelector(link.getAttribute('href')))
+        .filter(Boolean);
+
+    if (sections.length && 'IntersectionObserver' in window) {
+        const visible = new Map();
+
+        const setActive = (id) => {
+            navLinks.forEach((link) => {
+                link.classList.toggle(
+                    'is-active',
+                    link.getAttribute('href') === `#${id}`
+                );
             });
-        });
-    });
+        };
+
+        const sectionObserver = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    visible.set(entry.target.id, entry.intersectionRatio);
+                });
+
+                // Whichever tracked section occupies the most of the viewport wins.
+                let best = null;
+                let bestRatio = 0;
+                visible.forEach((ratio, id) => {
+                    if (ratio > bestRatio) {
+                        bestRatio = ratio;
+                        best = id;
+                    }
+                });
+
+                if (best) setActive(best);
+            },
+            {
+                threshold: [0, 0.15, 0.35, 0.6, 0.85],
+                rootMargin: '-84px 0px 0px 0px' // discount the fixed navbar
+            }
+        );
+
+        sections.forEach((section) => sectionObserver.observe(section));
+    }
 });

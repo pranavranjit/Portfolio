@@ -1,0 +1,3 @@
+# Local design-tool and Claude settings, not part of the site
+.impeccable/
+.claude/

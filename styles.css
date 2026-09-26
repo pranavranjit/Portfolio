@@ -100,10 +100,21 @@ a {
     position: absolute;
     inset: 0;
     z-index: -1;
-    background: var(--amber);
+    background-color: transparent;
     transform: scaleX(0);
     transform-origin: left center;
-    transition: transform 0.28s var(--ease-out);
+    /* Leaving: the layer shrinks away first, then gives up its colour */
+    transition: transform 0.28s var(--ease-out), background-color 0s linear 0.28s;
+}
+
+/* Arriving: the colour is there at once and the layer wipes in */
+.keys a.is-active::before,
+.key:hover::before,
+.key:focus-visible::before,
+.channel:hover::before,
+.channel:focus-visible::before {
+    transform: scaleX(1);
+    transition: transform 0.28s var(--ease-out), background-color 0s;
 }
 
 /* ------------------------------- Key strip ------------------------------ */
@@ -189,7 +200,7 @@ a {
 }
 
 .keys a.is-active::before {
-    transform: scaleX(1);
+    background-color: var(--amber);
 }
 
 .keys a.is-active .key-num {
@@ -338,7 +349,7 @@ a {
 
 .key:hover::before,
 .key:focus-visible::before {
-    transform: scaleX(1);
+    background-color: var(--amber);
 }
 
 /* The primary key keeps the outline and leads with a heavier rule, a white
@@ -802,18 +813,15 @@ a {
     text-decoration: none;
 }
 
-.channel::before {
-    background: var(--amber-soft);
+.channel:hover::before,
+.channel:focus-visible::before {
+    background-color: var(--amber-soft);
 }
 
 .channel:nth-child(odd) {
     border-right: 1px solid var(--rule);
 }
 
-.channel:hover::before,
-.channel:focus-visible::before {
-    transform: scaleX(1);
-}
 
 .channel-icon {
     display: flex;
@@ -873,8 +881,7 @@ a {
     padding: 14px 0;
     color: var(--grey);
     font-size: 12px;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
+    letter-spacing: 0.02em;
 }
 
 @media (prefers-reduced-motion: reduce) {

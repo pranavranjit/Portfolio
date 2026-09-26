@@ -3,86 +3,114 @@ document.addEventListener('DOMContentLoaded', () => {
         '(prefers-reduced-motion: reduce)'
     ).matches;
 
-    /* ---------------------------------------------------------------
-       Reveal sections on scroll
-       --------------------------------------------------------------- */
-    const animated = document.querySelectorAll('.fade-in, .slide-up');
-
-    if (reduceMotion || !('IntersectionObserver' in window)) {
-        animated.forEach((el) => el.classList.add('in-view'));
-    } else {
-        const revealObserver = new IntersectionObserver(
-            (entries, observer) => {
-                entries.forEach((entry) => {
-                    if (!entry.isIntersecting) return;
-                    entry.target.classList.add('in-view');
-                    observer.unobserve(entry.target); // reveal once
-                });
-            },
-            { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
-        );
-
-        animated.forEach((el) => revealObserver.observe(el));
-    }
-
-    /* ---------------------------------------------------------------
-       Navbar gets a hairline + shadow once the page has scrolled
-       --------------------------------------------------------------- */
     const navbar = document.querySelector('.navbar');
+    const strip = document.querySelector('.nav-links');
+    if (!navbar || !strip) return;
 
-    if (navbar) {
-        const syncNavbar = () => {
-            navbar.classList.toggle('is-stuck', window.scrollY > 8);
-        };
-
-        syncNavbar();
-        window.addEventListener('scroll', syncNavbar, { passive: true });
-    }
-
-    /* ---------------------------------------------------------------
-       Highlight the nav link for the section currently in view
-       --------------------------------------------------------------- */
-    const navLinks = Array.from(document.querySelectorAll('.nav-links a'));
+    const navLinks = Array.from(strip.querySelectorAll('a'));
     const sections = navLinks
         .map((link) => document.querySelector(link.getAttribute('href')))
         .filter(Boolean);
 
-    if (sections.length && 'IntersectionObserver' in window) {
-        const visible = new Map();
+    /* ---------------------------------------------------------------
+       Navbar gets a hairline + shadow once the page has scrolled
+       --------------------------------------------------------------- */
+    const syncNavbar = () => {
+        navbar.classList.toggle('is-stuck', window.scrollY > 8);
+    };
 
-        const setActive = (id) => {
-            navLinks.forEach((link) => {
-                link.classList.toggle(
-                    'is-active',
-                    link.getAttribute('href') === `#${id}`
-                );
-            });
-        };
-
-        const sectionObserver = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    visible.set(entry.target.id, entry.intersectionRatio);
-                });
-
-                // Whichever tracked section occupies the most of the viewport wins.
-                let best = null;
-                let bestRatio = 0;
-                visible.forEach((ratio, id) => {
-                    if (ratio > bestRatio) {
-                        bestRatio = ratio;
-                        best = id;
-                    }
-                });
-
-                if (best) setActive(best);
-            },
-            {
-                threshold: [0, 0.15, 0.35, 0.6, 0.85],
-                rootMargin: '-84px 0px 0px 0px' // discount the fixed navbar
-            }
+    /* ---------------------------------------------------------------
+       On narrow screens the links scroll sideways; fade the edge that
+       still has links beyond it
+       --------------------------------------------------------------- */
+    const syncStrip = () => {
+        const overflow = strip.scrollWidth - strip.clientWidth;
+        strip.classList.toggle(
+            'can-scroll-left',
+            overflow > 1 && strip.scrollLeft > 1
         );
+        strip.classList.toggle(
+            'can-scroll-right',
+            overflow > 1 && strip.scrollLeft < overflow - 1
+        );
+    };
 
-        sections.forEach((section) => sectionObserver.observe(section));
-    }
+    /* ---------------------------------------------------------------
+       Highlight the link for the section being read, and keep it in
+       view when the links are a scrolling strip
+       --------------------------------------------------------------- */
+    let current = null;
+
+    const setActive = (id) => {
+        if (id === current) return;
+        const first = current === null;
+        current = id;
+
+        let activeLink = null;
+        navLinks.forEach((link) => {
+            const isActive = link.getAttribute('href') === `#${id}`;
+            link.classList.toggle('is-active', isActive);
+            if (isActive) {
+                link.setAttribute('aria-current', 'location');
+                activeLink = link;
+            } else {
+                link.removeAttribute('aria-current');
+            }
+        });
+
+        if (activeLink && strip.scrollWidth > strip.clientWidth) {
+            const stripBox = strip.getBoundingClientRect();
+            const linkBox = activeLink.getBoundingClientRect();
+            strip.scrollBy({
+                left:
+                    linkBox.left -
+                    stripBox.left -
+                    (stripBox.width - linkBox.width) / 2,
+                behavior: first || reduceMotion ? 'auto' : 'smooth'
+            });
+        }
+    };
+
+    // The active section is the last one whose top has crossed a reading
+    // line a quarter of the way down the visible page, below the fixed nav.
+    const spy = () => {
+        if (!sections.length) return;
+        const navHeight = navbar.offsetHeight;
+        const line = navHeight + (window.innerHeight - navHeight) * 0.25;
+
+        let active = sections[0];
+        sections.forEach((section) => {
+            if (section.getBoundingClientRect().top <= line) active = section;
+        });
+
+        // Short closing sections never reach the line; the page end is theirs.
+        const atBottom =
+            window.innerHeight + window.scrollY >=
+            document.documentElement.scrollHeight - 2;
+        if (atBottom) active = sections[sections.length - 1];
+
+        setActive(active.id);
+    };
+
+    let queued = false;
+    const onScroll = () => {
+        if (queued) return;
+        queued = true;
+        requestAnimationFrame(() => {
+            queued = false;
+            syncNavbar();
+            spy();
+        });
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', () => {
+        syncStrip();
+        onScroll();
+    });
+    strip.addEventListener('scroll', syncStrip, { passive: true });
+
+    syncNavbar();
+    syncStrip();
+    spy();
 });

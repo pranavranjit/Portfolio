@@ -9,66 +9,75 @@
             content="Portfolio of Pranav, a data scientist and quantitative analyst in Sydney, working on time-series forecasting, portfolio optimisation, and applied machine learning."
         />
         <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-        <meta name="theme-color" content="#f6f7f9" />
-        <link rel="stylesheet" href="styles.css" />
+        <meta name="theme-color" content="#0b0d10" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Martian+Mono:wdth,wght@75..112.5,100..800&display=swap"
             rel="stylesheet"
         />
+        <link rel="stylesheet" href="styles.css" />
     </head>
 
     <body>
-        <div class="grid-bg" aria-hidden="true"></div>
-
-        <nav class="navbar">
-            <a class="logo" href="#home">PRANAV<span class="logo-mark">.</span></a>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <span class="nav-status">
-                <span class="status-dot" aria-hidden="true"></span>
-                Open to work
-            </span>
-        </nav>
+        <header class="strip">
+            <div class="strip-inner">
+                <a class="logo" href="#home">PRANAV<span class="logo-mark">.</span></a>
+                <nav class="keys" aria-label="Sections">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#experience" aria-keyshortcuts="1"><kbd class="key-num" aria-hidden="true">1</kbd>Experience</a></li>
+                        <li><a href="#projects" aria-keyshortcuts="2"><kbd class="key-num" aria-hidden="true">2</kbd>Projects</a></li>
+                        <li><a href="#education" aria-keyshortcuts="3"><kbd class="key-num" aria-hidden="true">3</kbd>Education</a></li>
+                        <li><a href="#about" aria-keyshortcuts="4"><kbd class="key-num" aria-hidden="true">4</kbd>About</a></li>
+                        <li><a href="#contact" aria-keyshortcuts="5"><kbd class="key-num" aria-hidden="true">5</kbd>Contact</a></li>
+                    </ul>
+                </nav>
+                <span class="status">
+                    <span class="status-dot" aria-hidden="true"></span>
+                    Open to work
+                </span>
+            </div>
+        </header>
 
         <main>
-        <header id="home" class="hero section">
-            <div class="hero-copy">
-                <h1>Pranav</h1>
-                <p class="hero-role">Data Scientist &amp; Quantitative Analyst</p>
-                <p class="hero-location">Sydney, NSW</p>
-                <p class="hero-lede">
-                    I build forecasting, optimisation and decision-support
-                    systems: production time-series models, portfolio
-                    optimisation tooling, and machine-learning applications that
-                    put analysis in front of the people making the call.
-                </p>
-                <div class="hero-actions">
-                    <a href="#projects" class="btn btn-primary">
-                        View selected work
-                        <span class="arrow" aria-hidden="true">&rarr;</span>
-                    </a>
-                    <a href="#contact" class="btn btn-secondary">Get in touch</a>
+            <section id="home" class="hero">
+                <div class="id-line">
+                    <h1>Pranav</h1>
+                    <div class="id-meta">
+                        <p class="role">Data Scientist &amp; Quantitative Analyst</p>
+                        <p class="city">Sydney, NSW</p>
+                    </div>
                 </div>
-                <p class="hero-stack">
+
+                <p class="tickers">
                     <span>Python</span><span>SQL</span><span>scikit-learn</span
                     ><span>Spark</span><span>Tableau</span><span>FastAPI</span>
                 </p>
-            </div>
 
-            <figure class="hero-figure">
-                <figcaption class="figure-head">
-                    <span class="figure-title">Fitted trend</span>
-                    <span class="figure-tag">illustrative</span>
-                </figcaption>
-                <svg class="plot" viewBox="0 0 440 288" role="img"
+                <div class="hero-grid">
+                    <div class="brief">
+                        <p class="lede">
+                            I build forecasting, optimisation and decision-support
+                            systems: production time-series models, portfolio
+                            optimisation tooling, and machine-learning applications that
+                            put analysis in front of the people making the call.
+                        </p>
+                        <div class="actions">
+                            <a href="#projects" class="key key-go">
+                                View selected work
+                                <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m13 6 6 6-6 6" /></svg>
+                            </a>
+                            <a href="#contact" class="key">Get in touch</a>
+                        </div>
+                    </div>
+
+                    <figure class="panel fit">
+                        <figcaption class="panel-bar">
+                            <span class="panel-title">Fitted trend</span>
+                            <span class="panel-tag">illustrative</span>
+                        </figcaption>
+                        <svg class="plot" viewBox="0 0 440 288" role="img"
                          aria-label="Illustrative scatter plot of observations with a fitted linear trend and error band.">
                         <g class="plot-grid">
                         <line x1="56" y1="34" x2="404" y2="34" />
@@ -114,144 +123,136 @@
                               transform="rotate(-90 46 135.0)">signal</text>
                         <text class="plot-axis-label" x="230.0" y="266">observations</text>
                     </svg>
-                <p class="figure-note">
-                    Scatter with an ordinary-least-squares fit and &plusmn;1 SE band.
+                        <p class="figure-note">
+                            Scatter with an ordinary-least-squares fit and &plusmn;1 SE band.
+                        </p>
+                    </figure>
+                </div>
+            </section>
+
+            <section id="experience" class="section">
+                <div class="section-bar">
+                    <span class="section-index">01</span>
+                    <h2 class="section-title">Experience</h2>
+                </div>
+                <p class="section-sub">
+                    Applied data science and analytics across telecommunications,
+                    professional services and retail operations.
                 </p>
-            </figure>
-        </header>
 
-        <section id="experience" class="section">
-            <div class="section-head">
-                <span class="section-index">01</span>
-                <h2 class="section-title">Experience</h2>
-            </div>
-            <p class="section-sub">
-                Applied data science and analytics across telecommunications,
-                professional services and retail operations.
-            </p>
-
-            <div class="timeline">
-                <!-- Reliance Jio -->
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date"
-                            >Aug 2023 - Dec 2023 · Mumbai, India</span
-                        >
-                        <h3>Data Science Intern</h3>
-                        <p class="timeline-org">Reliance Jio Platforms Ltd</p>
-                        <ul class="timeline-list">
-                            <li>
-                                Built and optimised time-series forecasting
-                                models (STLM, ARIMA) for sales planning and
-                                inventory optimisation, informing demand and
-                                revenue planning while cutting computational
-                                runtime by 30%.
-                            </li>
-                            <li>
-                                Ran RFM (customer value) analysis and feature
-                                engineering, delivering Tableau executive
-                                dashboards that guided promotion budget
-                                allocation and retention strategy.
-                            </li>
-                            <li>
-                                Designed and ran A/B tests to validate pricing
-                                and segmentation strategies, translating results
-                                into business recommendations.
-                            </li>
-                            <li>
-                                Built SQL-based pipelines across Apache Spark
-                                and Databricks, cutting downstream processing
-                                time for stakeholder reporting.
-                            </li>
-                        </ul>
-                        <div class="tech-stack">
-                            <span>ARIMA / STLM</span><span>Tableau</span
-                            ><span>Apache Spark</span><span>Databricks</span
-                            ><span>SQL</span><span>A/B Testing</span>
+                <ol class="blotter">
+                    <!-- Reliance Jio -->
+                    <li class="row">
+                        <p class="row-fields">Aug 2023 - Dec 2023&nbsp;· Mumbai, India</p>
+                        <div class="row-main">
+                            <h3>Data Science Intern</h3>
+                            <p class="org">Reliance Jio Platforms Ltd</p>
+                            <ul class="bullets">
+                                <li>
+                                    Built and optimised time-series forecasting
+                                    models (STLM, ARIMA) for sales planning and
+                                    inventory optimisation, informing demand and
+                                    revenue planning while cutting computational
+                                    runtime by 30%.
+                                </li>
+                                <li>
+                                    Ran RFM (customer value) analysis and feature
+                                    engineering, delivering Tableau executive
+                                    dashboards that guided promotion budget
+                                    allocation and retention strategy.
+                                </li>
+                                <li>
+                                    Designed and ran A/B tests to validate pricing
+                                    and segmentation strategies, translating results
+                                    into business recommendations.
+                                </li>
+                                <li>
+                                    Built SQL-based pipelines across Apache Spark
+                                    and Databricks, cutting downstream processing
+                                    time for stakeholder reporting.
+                                </li>
+                            </ul>
+                            <p class="tags">
+                                <span>ARIMA / STLM</span><span>Tableau</span
+                                ><span>Apache Spark</span><span>Databricks</span
+                                ><span>SQL</span><span>A/B Testing</span>
+                            </p>
                         </div>
-                    </div>
-                </div>
+                    </li>
 
-                <!-- Deloitte -->
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date"
-                            >May 2022 - Jul 2022 · Bengaluru, India</span
-                        >
-                        <h3>Risk Advisory Intern</h3>
-                        <p class="timeline-org">Deloitte</p>
-                        <ul class="timeline-list">
-                            <li>
-                                Analysed general ledgers and transaction
-                                datasets to identify variances and drivers
-                                impacting client financial performance and
-                                reporting accuracy.
-                            </li>
-                            <li>
-                                Performed reconciliations and improved SQL
-                                extraction pipelines, building automated Excel
-                                data-governance workflows that cut manual
-                                processing time by 4+ hours/week.
-                            </li>
-                            <li>
-                                Translated findings into clear, client-facing
-                                summaries for senior stakeholders.
-                            </li>
-                        </ul>
-                        <div class="tech-stack">
-                            <span>GL Review</span><span>Reconciliation</span
-                            ><span>SQL</span><span>Excel</span
-                            ><span>Data Governance</span>
+                    <!-- Deloitte -->
+                    <li class="row">
+                        <p class="row-fields">May 2022 - Jul 2022&nbsp;· Bengaluru, India</p>
+                        <div class="row-main">
+                            <h3>Risk Advisory Intern</h3>
+                            <p class="org">Deloitte</p>
+                            <ul class="bullets">
+                                <li>
+                                    Analysed general ledgers and transaction
+                                    datasets to identify variances and drivers
+                                    impacting client financial performance and
+                                    reporting accuracy.
+                                </li>
+                                <li>
+                                    Performed reconciliations and improved SQL
+                                    extraction pipelines, building automated Excel
+                                    data-governance workflows that cut manual
+                                    processing time by 4+ hours/week.
+                                </li>
+                                <li>
+                                    Translated findings into clear, client-facing
+                                    summaries for senior stakeholders.
+                                </li>
+                            </ul>
+                            <p class="tags">
+                                <span>GL Review</span><span>Reconciliation</span
+                                ><span>SQL</span><span>Excel</span
+                                ><span>Data Governance</span>
+                            </p>
                         </div>
-                    </div>
-                </div>
+                    </li>
 
-                <!-- Woolworths -->
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date"
-                            >Aug 2025 - Aug 2026 · Sydney, NSW</span
-                        >
-                        <h3>Night Fill Member (Part-Time)</h3>
-                        <p class="timeline-org">Woolworths</p>
-                        <ul class="timeline-list">
-                            <li>
-                                Supported inventory accuracy using AutoStock
-                                replenishment systems, cross-referencing demand
-                                triggers with physical counts to identify and
-                                resolve stock discrepancies.
-                            </li>
-                        </ul>
-                        <div class="tech-stack">
-                            <span>Inventory Control</span><span>AutoStock</span
-                            ><span>Stock Reconciliation</span>
+                    <!-- Woolworths -->
+                    <li class="row">
+                        <p class="row-fields">Aug 2025 - Aug 2026&nbsp;· Sydney, NSW</p>
+                        <div class="row-main">
+                            <h3>Night Fill Member (Part-Time)</h3>
+                            <p class="org">Woolworths</p>
+                            <ul class="bullets">
+                                <li>
+                                    Supported inventory accuracy using AutoStock
+                                    replenishment systems, cross-referencing demand
+                                    triggers with physical counts to identify and
+                                    resolve stock discrepancies.
+                                </li>
+                            </ul>
+                            <p class="tags">
+                                <span>Inventory Control</span><span>AutoStock</span
+                                ><span>Stock Reconciliation</span>
+                            </p>
                         </div>
-                    </div>
+                    </li>
+                </ol>
+            </section>
+
+            <section id="projects" class="section">
+                <div class="section-bar">
+                    <span class="section-index">02</span>
+                    <h2 class="section-title">Selected work</h2>
                 </div>
-            </div>
-        </section>
+                <p class="section-sub">
+                    End-to-end builds covering data ingestion, modelling and interface.
+                    Each one is deployed and publicly usable.
+                </p>
 
-        <section id="projects" class="section">
-            <div class="section-head">
-                <span class="section-index">02</span>
-                <h2 class="section-title">Selected work</h2>
-            </div>
-            <p class="section-sub">
-                End-to-end builds covering data ingestion, modelling and interface.
-                Each one is deployed and publicly usable.
-            </p>
-
-            <div class="project-grid">
-                <!-- Project 1 -->
-                <article class="project-card">
-                    <div class="project-viz">
-                        <span class="badge">Audio ML</span>
-                        <svg class="thumb-plot" viewBox="0 0 303 177" preserveAspectRatio="xMidYMid meet" role="img"
+                <div class="instruments">
+                    <article class="panel instrument">
+                        <div class="panel-bar"><span class="badge">Audio ML</span></div>
+                        <div class="instrument-body">
+                            <div class="instrument-viz">
+                                <svg class="thumb-plot chroma" viewBox="0 0 303 177" preserveAspectRatio="xMidYMid meet" role="img"
                              aria-label="Illustrative chromagram: energy across the 12 pitch classes over time, brighter cells marking the notes of each detected chord.">
-                            <defs><rect id="cell" width="14" height="12" rx="2" /></defs>
+                            <defs><rect id="cell" width="14" height="12" /></defs>
                             <g fill="#e9f2fd"><use href="#cell" x="0" y="150"/><use href="#cell" x="0" y="90"/><use href="#cell" x="0" y="75"/><use href="#cell" x="0" y="45"/><use href="#cell" x="0" y="30"/><use href="#cell" x="0" y="0"/><use href="#cell" x="17" y="150"/><use href="#cell" x="17" y="90"/><use href="#cell" x="17" y="75"/><use href="#cell" x="17" y="45"/><use href="#cell" x="17" y="30"/><use href="#cell" x="17" y="0"/><use href="#cell" x="34" y="150"/><use href="#cell" x="34" y="90"/><use href="#cell" x="34" y="75"/><use href="#cell" x="34" y="45"/><use href="#cell" x="34" y="30"/><use href="#cell" x="34" y="0"/><use href="#cell" x="51" y="150"/><use href="#cell" x="51" y="135"/><use href="#cell" x="51" y="105"/><use href="#cell" x="51" y="75"/><use href="#cell" x="51" y="15"/><use href="#cell" x="51" y="0"/><use href="#cell" x="68" y="150"/><use href="#cell" x="68" y="135"/><use href="#cell" x="68" y="105"/><use href="#cell" x="68" y="75"/><use href="#cell" x="68" y="15"/><use href="#cell" x="68" y="0"/><use href="#cell" x="85" y="150"/><use href="#cell" x="85" y="105"/><use href="#cell" x="85" y="75"/><use href="#cell" x="85" y="15"/><use href="#cell" x="85" y="0"/><use href="#cell" x="102" y="135"/><use href="#cell" x="102" y="90"/><use href="#cell" x="102" y="75"/><use href="#cell" x="102" y="15"/><use href="#cell" x="119" y="135"/><use href="#cell" x="119" y="120"/><use href="#cell" x="119" y="75"/><use href="#cell" x="119" y="45"/><use href="#cell" x="119" y="15"/><use href="#cell" x="136" y="135"/><use href="#cell" x="136" y="90"/><use href="#cell" x="136" y="45"/><use href="#cell" x="136" y="15"/><use href="#cell" x="153" y="150"/><use href="#cell" x="153" y="120"/><use href="#cell" x="153" y="45"/><use href="#cell" x="153" y="15"/><use href="#cell" x="153" y="0"/><use href="#cell" x="170" y="150"/><use href="#cell" x="170" y="60"/><use href="#cell" x="170" y="45"/><use href="#cell" x="170" y="15"/><use href="#cell" x="170" y="0"/><use href="#cell" x="187" y="165"/><use href="#cell" x="187" y="150"/><use href="#cell" x="187" y="120"/><use href="#cell" x="187" y="60"/><use href="#cell" x="187" y="45"/><use href="#cell" x="187" y="15"/><use href="#cell" x="187" y="0"/><use href="#cell" x="204" y="165"/><use href="#cell" x="204" y="150"/><use href="#cell" x="204" y="75"/><use href="#cell" x="204" y="45"/><use href="#cell" x="221" y="165"/><use href="#cell" x="221" y="150"/><use href="#cell" x="221" y="120"/><use href="#cell" x="221" y="105"/><use href="#cell" x="221" y="75"/><use href="#cell" x="238" y="165"/><use href="#cell" x="238" y="150"/><use href="#cell" x="238" y="120"/><use href="#cell" x="238" y="105"/><use href="#cell" x="238" y="45"/><use href="#cell" x="255" y="150"/><use href="#cell" x="255" y="90"/><use href="#cell" x="255" y="45"/><use href="#cell" x="255" y="30"/><use href="#cell" x="255" y="0"/><use href="#cell" x="272" y="150"/><use href="#cell" x="272" y="90"/><use href="#cell" x="272" y="75"/><use href="#cell" x="272" y="45"/><use href="#cell" x="272" y="30"/><use href="#cell" x="272" y="15"/><use href="#cell" x="272" y="0"/><use href="#cell" x="289" y="150"/><use href="#cell" x="289" y="90"/><use href="#cell" x="289" y="45"/><use href="#cell" x="289" y="30"/></g>
                             <g fill="#cde2fb"><use href="#cell" x="0" y="15"/><use href="#cell" x="17" y="135"/><use href="#cell" x="17" y="15"/><use href="#cell" x="34" y="15"/><use href="#cell" x="51" y="120"/><use href="#cell" x="51" y="60"/><use href="#cell" x="68" y="120"/><use href="#cell" x="68" y="60"/><use href="#cell" x="85" y="135"/><use href="#cell" x="85" y="120"/><use href="#cell" x="85" y="60"/><use href="#cell" x="102" y="120"/><use href="#cell" x="102" y="45"/><use href="#cell" x="119" y="90"/><use href="#cell" x="119" y="60"/><use href="#cell" x="119" y="0"/><use href="#cell" x="136" y="120"/><use href="#cell" x="136" y="75"/><use href="#cell" x="136" y="60"/><use href="#cell" x="136" y="0"/><use href="#cell" x="153" y="105"/><use href="#cell" x="153" y="60"/><use href="#cell" x="170" y="120"/><use href="#cell" x="170" y="105"/><use href="#cell" x="187" y="105"/><use href="#cell" x="204" y="120"/><use href="#cell" x="204" y="105"/><use href="#cell" x="204" y="90"/><use href="#cell" x="204" y="30"/><use href="#cell" x="221" y="90"/><use href="#cell" x="221" y="45"/><use href="#cell" x="221" y="30"/><use href="#cell" x="238" y="75"/><use href="#cell" x="255" y="135"/><use href="#cell" x="255" y="75"/><use href="#cell" x="255" y="15"/><use href="#cell" x="289" y="135"/><use href="#cell" x="289" y="75"/><use href="#cell" x="289" y="15"/><use href="#cell" x="289" y="0"/></g>
                             <g fill="#9ec5f4"><use href="#cell" x="0" y="135"/><use href="#cell" x="34" y="135"/><use href="#cell" x="102" y="60"/><use href="#cell" x="102" y="0"/><use href="#cell" x="153" y="165"/><use href="#cell" x="170" y="165"/><use href="#cell" x="238" y="90"/><use href="#cell" x="238" y="30"/><use href="#cell" x="272" y="135"/></g>
@@ -260,36 +261,37 @@
                             <g fill="#2a78d6"><use href="#cell" x="0" y="60"/><use href="#cell" x="17" y="105"/><use href="#cell" x="34" y="60"/><use href="#cell" x="68" y="45"/><use href="#cell" x="85" y="165"/><use href="#cell" x="102" y="150"/><use href="#cell" x="102" y="105"/><use href="#cell" x="119" y="150"/><use href="#cell" x="136" y="165"/><use href="#cell" x="136" y="105"/><use href="#cell" x="153" y="30"/><use href="#cell" x="170" y="90"/><use href="#cell" x="187" y="30"/><use href="#cell" x="204" y="15"/><use href="#cell" x="238" y="135"/><use href="#cell" x="255" y="105"/><use href="#cell" x="255" y="60"/><use href="#cell" x="272" y="165"/><use href="#cell" x="272" y="105"/><use href="#cell" x="272" y="60"/><use href="#cell" x="289" y="120"/><use href="#cell" x="289" y="60"/></g>
                             <g fill="#1c5cab"><use href="#cell" x="0" y="165"/><use href="#cell" x="17" y="165"/><use href="#cell" x="34" y="165"/><use href="#cell" x="51" y="165"/><use href="#cell" x="51" y="90"/><use href="#cell" x="68" y="165"/><use href="#cell" x="68" y="90"/><use href="#cell" x="85" y="90"/><use href="#cell" x="102" y="30"/><use href="#cell" x="119" y="105"/><use href="#cell" x="119" y="30"/><use href="#cell" x="136" y="30"/><use href="#cell" x="153" y="135"/><use href="#cell" x="170" y="135"/><use href="#cell" x="170" y="30"/><use href="#cell" x="187" y="135"/><use href="#cell" x="204" y="60"/><use href="#cell" x="221" y="135"/><use href="#cell" x="221" y="60"/><use href="#cell" x="238" y="60"/><use href="#cell" x="255" y="165"/><use href="#cell" x="289" y="165"/></g>
                         </svg>
-                    </div>
-                    <div class="project-info">
-                        <h3>LiveChord</h3>
-                        <p>
-                            An interactive, real-time web app that pulls a song
-                            from YouTube and transcribes its chord progression
-                            using chroma pitch analysis with Viterbi temporal
-                            smoothing, then lets you practice along live through
-                            microphone input.
-                        </p>
-                        <div class="tech-stack">
-                            <span>Python</span><span>Librosa</span
-                            ><span>FastAPI</span><span>WebSockets</span>
+                            </div>
+                            <div class="instrument-info">
+                                <h3>LiveChord</h3>
+                                <p>
+                                    An interactive, real-time web app that pulls a song
+                                    from YouTube and transcribes its chord progression
+                                    using chroma pitch analysis with Viterbi temporal
+                                    smoothing, then lets you practice along live through
+                                    microphone input.
+                                </p>
+                                <p class="tags">
+                                    <span>Python</span><span>Librosa</span
+                                    ><span>FastAPI</span><span>WebSockets</span>
+                                </p>
+                                <a
+                                    href="https://sunny2802-live-chord-ai.hf.space"
+                                    target="_blank"
+                                    rel="noopener"
+                                    class="key key-go"
+                                    >Open live demo
+                                    <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m13 6 6 6-6 6" /></svg></a
+                                >
+                            </div>
                         </div>
-                        <a
-                            href="https://sunny2802-live-chord-ai.hf.space"
-                            target="_blank"
-                            rel="noopener"
-                            class="btn btn-link"
-                            >Open live demo
-                            <span class="arrow" aria-hidden="true">&rarr;</span></a
-                        >
-                    </div>
-                </article>
+                    </article>
 
-                <!-- Project 2 -->
-                <article class="project-card">
-                    <div class="project-viz">
-                        <span class="badge">Quant / ML</span>
-                        <svg class="thumb-plot" viewBox="0 0 340 220" preserveAspectRatio="xMidYMid meet" role="img"
+                    <article class="panel instrument">
+                        <div class="panel-bar"><span class="badge">Quant / ML</span></div>
+                        <div class="instrument-body">
+                            <div class="instrument-viz">
+                                <svg class="thumb-plot" viewBox="0 0 340 220" preserveAspectRatio="xMidYMid meet" role="img"
      aria-label="Illustrative risk-return scatter of candidate portfolios with an efficient frontier curve and the optimal point marked.">
   <g class="tp-grid">
     <line x1="34" y1="32" x2="322" y2="32" /><line x1="34" y1="103.0" x2="322" y2="103.0" /><line x1="34" y1="174" x2="322" y2="174" />
@@ -373,220 +375,235 @@
   <text class="tp-axis-label" x="178.0" y="206">risk</text>
   <text class="tp-axis-label" x="26" y="103.0" transform="rotate(-90 26 103.0)">return</text>
 </svg>
-                    </div>
-                    <div class="project-info">
-                        <h3>Stock Portfolio &amp; Momentum Tracker</h3>
-                        <p>
-                            A full-stack Streamlit application featuring Sharpe
-                            ratio portfolio optimization, momentum-based stock
-                            analysis using Ridge/OLS/ElasticNet models,
-                            NLP-driven market sentiment analysis, and a Gemini
-                            AI trading copilot.
-                        </p>
-                        <div class="tech-stack">
-                            <span>Python</span><span>Streamlit</span
-                            ><span>Scikit-Learn</span><span>Plotly</span
-                            ><span>NLP</span><span>Gemini AI</span>
+                            </div>
+                            <div class="instrument-info">
+                                <h3>Stock Portfolio &amp; Momentum Tracker</h3>
+                                <p>
+                                    A full-stack Streamlit application featuring Sharpe
+                                    ratio portfolio optimization, momentum-based stock
+                                    analysis using Ridge/OLS/ElasticNet models,
+                                    NLP-driven market sentiment analysis, and a Gemini
+                                    AI trading copilot.
+                                </p>
+                                <p class="tags">
+                                    <span>Python</span><span>Streamlit</span
+                                    ><span>Scikit-Learn</span><span>Plotly</span
+                                    ><span>NLP</span><span>Gemini AI</span>
+                                </p>
+                                <a
+                                    href="https://crypto-tracker-and-portfolio-management-aiamouaxdduqc7grbhclme.streamlit.app/"
+                                    target="_blank"
+                                    rel="noopener"
+                                    class="key key-go"
+                                    >Open live app
+                                    <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m13 6 6 6-6 6" /></svg></a
+                                >
+                            </div>
                         </div>
-                        <a
-                            href="https://crypto-tracker-and-portfolio-management-aiamouaxdduqc7grbhclme.streamlit.app/"
-                            target="_blank"
-                            rel="noopener"
-                            class="btn btn-link"
-                            >Open live app
-                            <span class="arrow" aria-hidden="true">&rarr;</span></a
-                        >
-                    </div>
-                </article>
+                    </article>
 
-                <!-- Project 3 -->
-                <article class="project-card">
-                    <div class="project-viz">
-                        <span class="badge">Simulation / WASM</span>
-                        <svg class="thumb-plot" viewBox="0 0 340 220" preserveAspectRatio="xMidYMid meet" role="img"
+                    <article class="panel instrument">
+                        <div class="panel-bar"><span class="badge">Simulation / WASM</span></div>
+                        <div class="instrument-body">
+                            <div class="instrument-viz">
+                                <svg class="thumb-plot" viewBox="0 0 340 220" preserveAspectRatio="xMidYMid meet" role="img"
      aria-label="Illustrative bar chart of a balance compounding upward over successive in-game turns.">
   <g class="tp-grid">
     <line x1="34" y1="32" x2="322" y2="32" /><line x1="34" y1="103.0" x2="322" y2="103.0" />
   </g>
   <g class="tp-axis"><line x1="34" y1="18" x2="34" y2="188" /><line x1="34" y1="188" x2="322" y2="188" /></g>
   <g class="tp-bars">
-        <rect x="44.0" y="131.0" width="14.4" height="57.0" rx="4" opacity="0.32" />
-    <rect x="63.4" y="126.8" width="14.4" height="61.2" rx="4" opacity="0.37" />
-    <rect x="82.9" y="122.2" width="14.4" height="65.8" rx="4" opacity="0.42" />
-    <rect x="102.3" y="117.2" width="14.4" height="70.8" rx="4" opacity="0.48" />
-    <rect x="121.7" y="111.7" width="14.4" height="76.3" rx="4" opacity="0.53" />
-    <rect x="141.1" y="105.7" width="14.4" height="82.3" rx="4" opacity="0.58" />
-    <rect x="160.6" y="99.2" width="14.4" height="88.8" rx="4" opacity="0.63" />
-    <rect x="180.0" y="92.1" width="14.4" height="95.9" rx="4" opacity="0.69" />
-    <rect x="199.4" y="84.4" width="14.4" height="103.6" rx="4" opacity="0.74" />
-    <rect x="218.9" y="76.0" width="14.4" height="112.0" rx="4" opacity="0.79" />
-    <rect x="238.3" y="66.8" width="14.4" height="121.2" rx="4" opacity="0.84" />
-    <rect x="257.7" y="56.8" width="14.4" height="131.2" rx="4" opacity="0.90" />
-    <rect x="277.1" y="45.9" width="14.4" height="142.1" rx="4" opacity="0.95" />
-    <rect x="296.6" y="34.0" width="14.4" height="154.0" rx="4" opacity="1.00" />
+        <rect x="44.0" y="131.0" width="14.4" height="57.0" opacity="0.32" />
+    <rect x="63.4" y="126.8" width="14.4" height="61.2" opacity="0.37" />
+    <rect x="82.9" y="122.2" width="14.4" height="65.8" opacity="0.42" />
+    <rect x="102.3" y="117.2" width="14.4" height="70.8" opacity="0.48" />
+    <rect x="121.7" y="111.7" width="14.4" height="76.3" opacity="0.53" />
+    <rect x="141.1" y="105.7" width="14.4" height="82.3" opacity="0.58" />
+    <rect x="160.6" y="99.2" width="14.4" height="88.8" opacity="0.63" />
+    <rect x="180.0" y="92.1" width="14.4" height="95.9" opacity="0.69" />
+    <rect x="199.4" y="84.4" width="14.4" height="103.6" opacity="0.74" />
+    <rect x="218.9" y="76.0" width="14.4" height="112.0" opacity="0.79" />
+    <rect x="238.3" y="66.8" width="14.4" height="121.2" opacity="0.84" />
+    <rect x="257.7" y="56.8" width="14.4" height="131.2" opacity="0.90" />
+    <rect x="277.1" y="45.9" width="14.4" height="142.1" opacity="0.95" />
+    <rect x="296.6" y="34.0" width="14.4" height="154.0" opacity="1.00" />
   </g>
   <text class="tp-axis-label" x="178.0" y="206">turns</text>
   <text class="tp-axis-label" x="26" y="103.0" transform="rotate(-90 26 103.0)">balance</text>
 </svg>
-                    </div>
-                    <div class="project-info">
-                        <h3>CoinQuest: Prosperity Point</h3>
-                        <p>
-                            A top-down finance simulation where the mechanics
-                            <em>are</em> the lessons: earn coins, then bank,
-                            budget, borrow, and invest to outrun inflation.
-                            Built in Python + Pygame with a from-scratch TF-IDF
-                            RAG advisor, compiled to WebAssembly to run
-                            in-browser.
-                        </p>
-                        <div class="tech-stack">
-                            <span>Python</span><span>Pygame</span
-                            ><span>WebAssembly</span><span>RAG</span>
+                            </div>
+                            <div class="instrument-info">
+                                <h3>CoinQuest: Prosperity Point</h3>
+                                <p>
+                                    A top-down finance simulation where the mechanics
+                                    <em>are</em> the lessons: earn coins, then bank,
+                                    budget, borrow, and invest to outrun inflation.
+                                    Built in Python + Pygame with a from-scratch TF-IDF
+                                    RAG advisor, compiled to WebAssembly to run
+                                    in-browser.
+                                </p>
+                                <p class="tags">
+                                    <span>Python</span><span>Pygame</span
+                                    ><span>WebAssembly</span><span>RAG</span>
+                                </p>
+                                <a
+                                    href="https://pranavranjit.github.io/coinquest/"
+                                    target="_blank"
+                                    rel="noopener"
+                                    class="key key-go"
+                                    >Run in browser
+                                    <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14" /><path d="m13 6 6 6-6 6" /></svg></a
+                                >
+                            </div>
                         </div>
-                        <a
-                            href="https://pranavranjit.github.io/coinquest/"
-                            target="_blank"
-                            rel="noopener"
-                            class="btn btn-link"
-                            >Run in browser
-                            <span class="arrow" aria-hidden="true">&rarr;</span></a
-                        >
+                    </article>
+                </div>
+            </section>
+
+            <section id="education" class="section">
+                <div class="section-bar">
+                    <span class="section-index">03</span>
+                    <h2 class="section-title">Education &amp; credentials</h2>
+                </div>
+                <p class="section-sub">
+                    Quantitative training across data science, economics and
+                    statistics.
+                </p>
+
+                <ul class="blotter ledger">
+                    <li class="row">
+                        <div class="row-fields">
+                            <p class="edu-tag">Masters</p>
+                            <p class="edu-meta">Feb 2024 - Dec 2025</p>
+                        </div>
+                        <div class="row-main">
+                            <h3>Master of Data Science and Decisions</h3>
+                            <p class="edu-org">University of New South Wales, Sydney</p>
+                            <p class="edu-detail">
+                                <strong>Coursework</strong>
+                                Financial Economics&nbsp;· Game Theory&nbsp;· Business Economics&nbsp;·
+                                Multivariate Analysis&nbsp;· Machine Learning&nbsp;· Database
+                                Management
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="row">
+                        <div class="row-fields">
+                            <p class="edu-tag">Bachelors</p>
+                            <p class="edu-meta">
+                                Apr 2020 - Mar 2023&nbsp;· First Class with Distinction
+                            </p>
+                        </div>
+                        <div class="row-main">
+                            <h3>BSc in Economics, Mathematics &amp; Statistics</h3>
+                            <p class="edu-org">
+                                CHRIST (Deemed to Be University), Bangalore
+                            </p>
+                            <p class="edu-detail">
+                                <strong>Coursework</strong>
+                                Financial Economics&nbsp;· Econometrics&nbsp;· Time Series
+                                Analysis&nbsp;· Linear Algebra&nbsp;· Operational Research&nbsp;·
+                                Hypothesis Testing
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="row">
+                        <div class="row-fields">
+                            <p class="edu-tag">Awards &amp; leadership</p>
+                        </div>
+                        <div class="row-main">
+                            <h3>Recognition</h3>
+                            <p class="edu-detail">
+                                First place, Science Exhibition (Dept. of Mathematics).
+                                Founded the Code Snaps wing of the Statistics and Data
+                                Science Association (STADA).
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="row">
+                        <div class="row-fields">
+                            <p class="edu-tag">Availability</p>
+                        </div>
+                        <div class="row-main">
+                            <h3>Sydney, NSW</h3>
+                            <p class="edu-detail">
+                                Holding a Graduate Visa (485) with full working rights. Open to
+                                Financial Analyst and data-driven finance roles, and
+                                available for relocation.
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="about" class="section">
+                <div class="section-bar">
+                    <span class="section-index">04</span>
+                    <h2 class="section-title">About</h2>
+                </div>
+                <p class="section-sub">
+                    Selected outcomes from the roles above.
+                </p>
+
+                <dl class="board">
+                    <div class="quote">
+                        <dt>Faster forecasting</dt>
+                        <dd class="figure">30%</dd>
+                        <dd class="note">
+                            runtime cut on production time-series models
+                        </dd>
                     </div>
-                </article>
-            </div>
-        </section>
+                    <div class="quote">
+                        <dt>Reclaimed weekly</dt>
+                        <dd class="figure">4+ hrs</dd>
+                        <dd class="note">
+                            manual reporting automated at Deloitte
+                        </dd>
+                    </div>
+                    <div class="quote">
+                        <dt>Live applications</dt>
+                        <dd class="figure">3</dd>
+                        <dd class="note">
+                            built end-to-end and publicly deployed
+                        </dd>
+                    </div>
+                </dl>
 
-        <section id="education" class="section">
-            <div class="section-head">
-                <span class="section-index">03</span>
-                <h2 class="section-title">Education &amp; credentials</h2>
-            </div>
-            <p class="section-sub">
-                Quantitative training across data science, economics and
-                statistics.
-            </p>
-
-            <div class="edu-grid">
-                <div class="edu-card">
-                    <span class="edu-tag">Masters</span>
-                    <h3>Master of Data Science and Decisions</h3>
-                    <p class="edu-org">University of New South Wales, Sydney</p>
-                    <p class="edu-meta">Feb 2024 - Dec 2025</p>
-                    <p class="edu-detail">
-                        <strong>Coursework</strong>
-                        Financial Economics · Game Theory · Business Economics ·
-                        Multivariate Analysis · Machine Learning · Database
-                        Management
+                <div class="about-copy">
+                    <p>
+                        I work where statistics, finance and software meet. A Master
+                        of Data Science and Decisions at UNSW on top of a BSc in
+                        Economics, Mathematics and Statistics means I am as
+                        comfortable specifying a model as I am shipping the
+                        application that serves it.
+                    </p>
+                    <p>
+                        In practice that has meant time-series forecasting and
+                        customer-value analysis at Reliance Jio, financial
+                        reconciliation and data governance at Deloitte, and a set of
+                        projects where I own the whole stack: ingestion, modelling
+                        and the interface people actually use.
                     </p>
                 </div>
+            </section>
 
-                <div class="edu-card">
-                    <span class="edu-tag">Bachelors</span>
-                    <h3>BSc in Economics, Mathematics &amp; Statistics</h3>
-                    <p class="edu-org">
-                        CHRIST (Deemed to Be University), Bangalore
-                    </p>
-                    <p class="edu-meta">
-                        Apr 2020 - Mar 2023 · First Class with Distinction
-                    </p>
-                    <p class="edu-detail">
-                        <strong>Coursework</strong>
-                        Financial Economics · Econometrics · Time Series
-                        Analysis · Linear Algebra · Operational Research ·
-                        Hypothesis Testing
-                    </p>
+            <section id="contact" class="section">
+                <div class="section-bar">
+                    <span class="section-index">05</span>
+                    <h2 class="section-title">Contact</h2>
                 </div>
-
-                <div class="edu-card">
-                    <span class="edu-tag">Awards &amp; leadership</span>
-                    <h3>Recognition</h3>
-                    <p class="edu-detail">
-                        First place, Science Exhibition (Dept. of Mathematics).
-                        Founded the Code Snaps wing of the Statistics and Data
-                        Science Association (STADA).
-                    </p>
-                </div>
-
-                <div class="edu-card">
-                    <span class="edu-tag">Availability</span>
-                    <h3>Sydney, NSW</h3>
-                    <p class="edu-detail">
-                        Holding a Graduate Visa (485) with full working rights. Open to
-                        Financial Analyst and data-driven finance roles, and
-                        available for relocation.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <section id="about" class="section">
-            <div class="section-head">
-                <span class="section-index">04</span>
-                <h2 class="section-title">About</h2>
-            </div>
-            <p class="section-sub">
-                Selected outcomes from the roles above.
-            </p>
-
-            <dl class="stats-grid">
-                <div class="stat-box">
-                    <dt>Faster forecasting</dt>
-                    <dd class="stat-value">30%</dd>
-                    <dd class="stat-note">
-                        runtime cut on production time-series models
-                    </dd>
-                </div>
-                <div class="stat-box">
-                    <dt>Reclaimed weekly</dt>
-                    <dd class="stat-value">4+ hrs</dd>
-                    <dd class="stat-note">
-                        manual reporting automated at Deloitte
-                    </dd>
-                </div>
-                <div class="stat-box">
-                    <dt>Live applications</dt>
-                    <dd class="stat-value">3</dd>
-                    <dd class="stat-note">
-                        built end-to-end and publicly deployed
-                    </dd>
-                </div>
-            </dl>
-
-            <div>
-                <p class="about-text">
-                    I work where statistics, finance and software meet. A Master
-                    of Data Science and Decisions at UNSW on top of a BSc in
-                    Economics, Mathematics and Statistics means I am as
-                    comfortable specifying a model as I am shipping the
-                    application that serves it.
+                <p class="section-sub">
+                    Open to Financial Analyst and data-driven finance roles in
+                    Sydney. Pick a channel; I reply on all of them.
                 </p>
-                <p class="about-text">
-                    In practice that has meant time-series forecasting and
-                    customer-value analysis at Reliance Jio, financial
-                    reconciliation and data governance at Deloitte, and a set of
-                    projects where I own the whole stack: ingestion, modelling
-                    and the interface people actually use.
-                </p>
-            </div>
-        </section>
 
-        <section id="contact" class="section">
-            <div class="section-head">
-                <span class="section-index">05</span>
-                <h2 class="section-title">Contact</h2>
-            </div>
-            <p class="section-sub">
-                Open to Financial Analyst and data-driven finance roles in
-                Sydney. Pick a channel; I reply on all of them.
-            </p>
-
-            <div class="contact-grid">
-                <a
-                    class="contact-card"
-                    href="mailto:pranav2ranjit@gmail.com"
-                >
-                    <span class="contact-icon">
-                        <svg
+                <div class="channels">
+                    <a class="channel" href="mailto:pranav2ranjit@gmail.com">
+                        <span class="channel-icon">
+                            <svg
                             width="20"
                             height="20"
                             viewBox="0 0 24 24"
@@ -600,16 +617,16 @@
                             <rect x="2" y="4" width="20" height="16" rx="2" />
                             <path d="m2 7 10 6 10-6" />
                         </svg>
-                    </span>
-                    <span class="contact-text">
-                        <span class="contact-label">Email</span>
-                        <span class="contact-value">pranav2ranjit@gmail.com</span>
-                    </span>
-                </a>
+                        </span>
+                        <span class="channel-text">
+                            <span class="channel-label">Email</span>
+                            <span class="channel-value">pranav2ranjit<wbr />@gmail.com</span>
+                        </span>
+                    </a>
 
-                <a class="contact-card" href="tel:+61493949697">
-                    <span class="contact-icon">
-                        <svg
+                    <a class="channel" href="tel:+61493949697">
+                        <span class="channel-icon">
+                            <svg
                             width="20"
                             height="20"
                             viewBox="0 0 24 24"
@@ -624,21 +641,21 @@
                                 d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 1.9.6 2.8a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.8.6a2 2 0 0 1 1.7 2z"
                             />
                         </svg>
-                    </span>
-                    <span class="contact-text">
-                        <span class="contact-label">Phone</span>
-                        <span class="contact-value">+61 493 949 697</span>
-                    </span>
-                </a>
+                        </span>
+                        <span class="channel-text">
+                            <span class="channel-label">Phone</span>
+                            <span class="channel-value">+61 493 949 697</span>
+                        </span>
+                    </a>
 
-                <a
-                    class="contact-card"
-                    href="https://www.linkedin.com/in/pranav2ranjit"
-                    target="_blank"
-                    rel="noopener"
-                >
-                    <span class="contact-icon">
-                        <svg
+                    <a
+                        class="channel"
+                        href="https://www.linkedin.com/in/pranav2ranjit"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        <span class="channel-icon">
+                            <svg
                             width="20"
                             height="20"
                             viewBox="0 0 24 24"
@@ -655,21 +672,21 @@
                             <rect x="2" y="9" width="4" height="12" rx="1" />
                             <circle cx="4" cy="4" r="2" />
                         </svg>
-                    </span>
-                    <span class="contact-text">
-                        <span class="contact-label">LinkedIn</span>
-                        <span class="contact-value">in/pranav2ranjit</span>
-                    </span>
-                </a>
+                        </span>
+                        <span class="channel-text">
+                            <span class="channel-label">LinkedIn</span>
+                            <span class="channel-value">in/pranav2ranjit</span>
+                        </span>
+                    </a>
 
-                <a
-                    class="contact-card"
-                    href="https://github.com/pranavranjit"
-                    target="_blank"
-                    rel="noopener"
-                >
-                    <span class="contact-icon">
-                        <svg
+                    <a
+                        class="channel"
+                        href="https://github.com/pranavranjit"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        <span class="channel-icon">
+                            <svg
                             width="20"
                             height="20"
                             viewBox="0 0 24 24"
@@ -684,26 +701,29 @@
                                 d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.9a3.4 3.4 0 0 0-.9-2.6c3-.3 6.2-1.5 6.2-6.7A5.2 5.2 0 0 0 19.9 5a4.9 4.9 0 0 0-.1-3.6s-1.2-.4-3.9 1.5a13.4 13.4 0 0 0-7 0C6.2 1 5 1.4 5 1.4A4.9 4.9 0 0 0 4.9 5 5.2 5.2 0 0 0 3.5 8.6c0 5.2 3.2 6.4 6.2 6.7A3.4 3.4 0 0 0 8.8 18V22"
                             />
                         </svg>
-                    </span>
-                    <span class="contact-text">
-                        <span class="contact-label">GitHub</span>
-                        <span class="contact-value">pranavranjit</span>
-                    </span>
-                </a>
-            </div>
+                        </span>
+                        <span class="channel-text">
+                            <span class="channel-label">GitHub</span>
+                            <span class="channel-value">pranavranjit</span>
+                        </span>
+                    </a>
+                </div>
 
-            <p class="contact-location">
-                Based in <strong>Sydney, NSW</strong>. Open to on-site, hybrid and
-                remote roles, and <strong>available for relocation</strong>.
-            </p>
-        </section>
+                <p class="contact-location">
+                    Based in <strong>Sydney, NSW</strong>. Open to on-site, hybrid and
+                    remote roles, and <strong>available for relocation</strong>.
+                </p>
+            </section>
         </main>
 
-        <footer>
-            <span>&copy; 2026 Pranav</span>
-            <span>Built with vanilla HTML, CSS &amp; JavaScript</span>
+        <footer class="statusbar">
+            <div class="statusbar-inner">
+                <span>&copy; 2026 Pranav</span>
+                <span class="legend">Keys <kbd>1</kbd>-<kbd>5</kbd></span>
+                <span>Built with vanilla HTML, CSS &amp; JavaScript</span>
+            </div>
         </footer>
 
-        <script src="script.js"></script>
+        <script src="script.js" defer></script>
     </body>
 </html>
